@@ -18,25 +18,25 @@ class App extends Component {
     }
 }
 
-componentDidMount() {
-  axios.get(`http://www.ourapi.com/{this.props.jobid}.json`)
-    .then((res) => {
-      this.setState({
-          job: res.data
-       });
-    })
-    .catch((err) => {
-      console.log(err)
-    })
-}
+// componentDidMount() {
+//   axios.get(`http://www.ourapi.com/{this.props.jobid}.json`)
+//     .then((res) => {
+//       this.setState({
+//           job: res.data
+//        });
+//     })
+//     .catch((err) => {
+//       console.log(err)
+//     })
+// }
 
   render() {
     return (
       <div className="App">
         <p>Hello</p>
-        < Route path="/" >
+        {/* < Route path="/" > */}
         <UserForm /> 
-        </Route>
+        {/* </Route> */}
         < Route path="/jobs" render={(routerProps)=>< JobsList jobs={this.state.jobs} {...routerProps} {...this.state}/>} />
 
       </div>

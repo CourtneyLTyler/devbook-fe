@@ -34,7 +34,7 @@ class UserForm extends Component {
 
   onSubmit(e) {
     e.preventDefault()
-    axios.post('https://devbook-backend.herokuapp.com/user/', this.state)
+    axios.post('https://devbook-backend.herokuapp.com', this.state)
       .then(res => {
         console.log(res)
         console.log(res.data)
