@@ -23,138 +23,115 @@ class UserForm extends Component {
     this.change = this.change.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
   }
-  change = e => {
-    this.setState({
-      [e.target.name]: e.target.value
-    });
-  };
-
-  onSubmit = e => {
-    e.preventDefult();
-    console.log(this.state);
-
-    axios
-      .post("/", this.state)
-      .then(res => {
-        console.log(res);
+  change(e) {
+    this.setState({ [e.target.name]: e.target.value },
+      () => {
+        console.log(this.state)
       })
-      .catch(err => {
-        console.log(err);
-      });
-  };
+  }
+
+  onSubmit(e) {
+    e.preventDefault()
+    axios.post('http://localhost:3001/user', this.state)
+      .then(res => {
+        console.log(res)
+        console.log(res.data)
+      })
+    console.log("Onsubmit Fired");
+  }
 
   render() {
     return (
-      <form>
-        <label>
-          UserName:
-          <input
-            name="userName"
-            placeholder="userName"
-            value={this.state.userName}
-            onchange={e => this.change(e)}
-          />
-        </label>
+      <form onSubmit={this.onSubmit}>
+        <label>UserName:</label>
+        <input
+          name="userName"
+          placeholder="userName"
+          value={this.state.userName}
+          onChange={e => this.change(e)}
+        />
 
-        <label>
-          FirstName:
-          <input
-            name="firstName"
-            placeholder="firstName"
-            value={this.state.firstName}
-            onchange={e => this.change(e)}
-          />
-        </label>
+        <label>FirstName:</label>
+        <input
+          name="firstName"
+          placeholder="firstName"
+          value={this.state.firstName}
+          onChange={e => this.change(e)}
+        />
 
-        <label>
-          LastName:
-          <input
-            name="lastName"
-            placeholder="lastName"
-            value={this.state.lastName}
-            onchange={e => this.change(e)}
-          />
-        </label>
+        <label>LastName:</label>
+        <input
+          name="lastName"
+          placeholder="lastName"
+          value={this.state.lastName}
+          onChange={e => this.change(e)}
+        />
 
-        <label>
-          email:
-          <input
-            name
-            placeholder="email"
-            value={this.state.email}
-            onchange={e => this.change(e)}
-          />
-        </label>
+        <label>email:</label>
+        <input
+          name="email"
+          placeholder="email"
+          value={this.state.email}
+          onChange={e => this.change(e)}
+        />
 
-        <label>
-          Profile Picture:
-          <input
-            name="profilePic"
-            placeholder="profilePic"
-            value={this.state.profilePic}
-            onchange={e => this.change(e)}
-          />
-        </label>
+        <label>Profile Picture:</label>
+        <input
+          name="profilePic"
+          placeholder="profilePic"
+          value={this.state.profilePic}
+          onChange={e => this.change(e)}
+        />
 
-        <label>
-          Location:
-          <input
-            name="location"
-            placeholder="location"
-            value={this.state.location}
-            onchange={e => this.change(e)}
-          />
-        </label>
+        <label>Location:</label>
+        <input
+          name="location"
+          placeholder="location"
+          value={this.state.location}
+          onChange={e => this.change(e)}
+        />
 
-        <label>
-          employer:
-          <input
-            name="employer"
-            placeholder="employer"
-            value={this.state.employer}
-            onchange={e => this.change(e)}
-          />
-        </label>
+        <label>employer:</label>
+        <input
+          name="employer"
+          placeholder="employer"
+          value={this.state.employer}
+          onChange={e => this.change(e)}
+        />
 
-        <label>
-          GithubURL:
-          <input
-            name="gitHubUrl"
-            placeholder="gitHubUrl"
-            value={this.state.gitHubUrl}
-            onchange={e => this.change(e)}
-          />
-        </label>
+        <label>GithubURL:</label>
+        <input
+          name="gitHubUrl"
+          placeholder="gitHubUrl"
+          value={this.state.gitHubUrl}
+          onChange={e => this.change(e)}
+        />
 
-        <label>
-          spacialty:
-          <input
-            name="specialty"
-            placeholder="specialty"
-            value={this.state.specialty}
-            onchange={e => this.change(e)}
-          />
-        </label>
+        <label>spacialty:</label>
+        <input
+          name="specialty"
+          placeholder="specialty"
+          value={this.state.specialty}
+          onChange={e => this.change(e)}
+        />
 
-        <label>
-          projects:
-          <input
-            name="projects"
-            placeholder="projects"
-            value={this.state.projects}
-            onchange={e => this.change(e)}
-          />
-        </label>
+        <label>projects:</label>
+        <input
+          name="projects"
+          placeholder="projects"
+          value={this.state.projects}
+          onChange={e => this.change(e)}
+        />
 
         {/* <label>
-          comments:
+          comments:</label>
           <input
             name="comments"
             placeholder="comments"
             value={this.state.comments}
-            onchange={e => this.change(e)}
+            onChange={e => this.change(e)}
           />
-        </label> */}
+ */}
 
         {/* <label>
           post:
@@ -162,7 +139,7 @@ class UserForm extends Component {
             name="post"
             placeholder="post"
             value={this.state.post}
-            onchange={e => this.change(e)}
+            onChange={e => this.change(e)}
           />
         </label> */}
 
@@ -172,10 +149,9 @@ class UserForm extends Component {
             name="Jobs"
             placeholder="jobs"
             value={this.state.jobs}
-            onchange={e => this.change(e)}
+            onChange={e => this.change(e)}
           />
         </label> */}
-        <button onClick={e => this.onSubmit(e)} />
         <input type="submit" value="Submit" />
       </form>
     );
