@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 import React, { Component } from "react";
 import "./App.css";
 import UserForm from "./User/UserForm";
-=======
 import React, { Component } from 'react';
 import './App.css';
 import { Route, Link, Switch } from 'react-router-dom'
@@ -10,7 +8,6 @@ import JobCreate from '../src/Job/JobCreate'
 import JobShow from '../src/Job/JobShow'
 import JobsList from '../src/Job/JobsList'
 import axios from 'axios'
->>>>>>> jobs-component
 
 class App extends Component {
 
@@ -37,12 +34,11 @@ componentDidMount() {
     return (
       <div className="App">
         <p>Hello</p>
-<<<<<<< HEAD
-        <UserForm />
-=======
+        < Route path="/" >
+        <UserForm /> 
+        </Route>
         < Route path="/jobs" render={(routerProps)=>< JobsList jobs={this.state.jobs} {...routerProps} {...this.state}/>} />
 
->>>>>>> jobs-component
       </div>
     );
   }

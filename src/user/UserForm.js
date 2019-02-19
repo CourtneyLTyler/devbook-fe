@@ -30,9 +30,11 @@ class UserForm extends Component {
       })
   }
 
+  // http://delicious-rub.surge.sh/user
+
   onSubmit(e) {
     e.preventDefault()
-    axios.post('http://localhost:3001/user', this.state)
+    axios.post('https://devbook-backend.herokuapp.com/user/', this.state)
       .then(res => {
         console.log(res)
         console.log(res.data)
