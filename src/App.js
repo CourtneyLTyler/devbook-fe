@@ -1,13 +1,13 @@
-import React, { Component } from "react";
-import "./App.css";
-import UserForm from "./User/UserForm";
+
+
 import React, { Component } from 'react';
+import UserForm from "./User/UserForm";
 import './App.css';
 import { Route, Link, Switch } from 'react-router-dom'
-import JobCreate from '../src/Job/JobCreate'
-import JobShow from '../src/Job/JobShow'
+// import JobCreate from '../src/Job/JobCreate'
+// import JobShow from '../src/Job/JobShow'
 import JobsList from '../src/Job/JobsList'
-import axios from 'axios'
+// import axios from 'axios'
 
 class App extends Component {
 
