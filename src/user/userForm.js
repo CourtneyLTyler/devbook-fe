@@ -2,15 +2,21 @@ import React, { Component } from "react";
 import index from "../index";
 
 class userForm extends Component {
-  constructor(props) {
-    super(props);
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleSubmit(e) {
-    alert(this.input.value);
-    e.preventDefault();
-  }
+  state = {
+    userName: "",
+    email: "",
+    firstName: "",
+    lastName: "",
+    // profilePic: "",
+    location: "",
+    githubUrl: "",
+    employer: "",
+    // specialty: "",
+    projects: "",
+    comments: "",
+    post: "",
+    jobs: ""
+  };
 
   render() {
     return (
