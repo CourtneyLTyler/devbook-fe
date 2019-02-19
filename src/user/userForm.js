@@ -1,66 +1,77 @@
 import React, { Component } from "react";
-// import index from "../index";
+import index from "../index";
 
 class userForm extends Component {
+  constructor(props) {
+    super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(e) {
+    alert(this.input.value);
+    e.preventDefault();
+  }
+
   render() {
     return (
       <form>
         <label>
           UserName:
-          <input type="text" />
+          <input type="text" ref={input => (this.input = input)} />
         </label>
         <label>
           FirstName:
-          <input type="text" />
+          <input type="text" ref={input => (this.input = input)} />
         </label>
 
         <label>
           LastName:
-          <input type="text" />
+          <input type="text" ref={input => (this.input = input)} />
         </label>
 
         <label>
-          Email:
-          <input type="text" />
+          email:
+          <input type="text" ref={input => (this.input = input)} />
         </label>
 
         <label>
           Profile Picture:
-          <input type="URL" />
+          <input type="text" ref={input => (this.input = input)} />
         </label>
 
         <label>
           Location:
-          <input type="text" />
+          <input type="text" ref={input => (this.input = input)} />
         </label>
         <label>
-          Employer:
-          <input type="text" />
+          employer:
+          <input type="text" ref={input => (this.input = input)} />
         </label>
         <label>
           GithubURL:
-          <input type=" URL" />
+          <input type="text" ref={input => (this.input = input)} />
         </label>
         <label>
-          Spacialty:
-          <input type="text" />
+          spacialty:
+          <input type="text" ref={input => (this.input = input)} />
         </label>
         <label>
-          Projects:
-          <input type="text" />
+          projects:
+          <input type="text" ref={input => (this.input = input)} />
         </label>
         <label>
-          Comments:
-          <input type="text" />
+          comments:
+          <input type="text" ref={input => (this.input = input)} />
         </label>
         <label>
-          Post:
-          <input type="text" />
+          post:
+          <input type="text" ref={input => (this.input = input)} />
         </label>
         <label>
           Jobs:
-          <input type="text" />
+          <input type="text" ref={input => (this.input = input)} />
         </label>
+
         <input type="submit" value="Submit" />
       </form>
     );
