@@ -1,22 +1,28 @@
 import React, { Component } from "react";
 // import index from "../index";
+import axios from "axios";
 
-class userForm extends Component {
-  state = {
-    userName: "",
-    email: "",
-    firstName: "",
-    lastName: "",
-    // profilePic: "",
-    location: "",
-    gitHubUrl: "",
-    employer: "",
-    // specialty: "",
-    projects: "",
-    comments: "",
-    post: "",
-    jobs: ""
-  };
+class UserForm extends Component {
+  constructor() {
+    super();
+    this.state = {
+      userName: "",
+      email: "",
+      firstName: "",
+      lastName: "",
+      profilePic: "",
+      location: "",
+      gitHubUrl: "",
+      employer: "",
+      specialty: "",
+      projects: ""
+      // comments: "",
+      // post: "",
+      //jobs: ""
+    };
+    this.change = this.change.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
   change = e => {
     this.setState({
       [e.target.name]: e.target.value
@@ -26,6 +32,15 @@ class userForm extends Component {
   onSubmit = e => {
     e.preventDefult();
     console.log(this.state);
+
+    axios
+      .post("/", this.state)
+      .then(res => {
+        console.log(res);
+      })
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   render() {
@@ -64,19 +79,22 @@ class userForm extends Component {
         <label>
           email:
           <input
+            name
             placeholder="email"
             value={this.state.email}
             onchange={e => this.change(e)}
           />
         </label>
 
-        {/* <label>
+        <label>
           Profile Picture:
-          <input 
-            placeholder="ProfilePic"
-            value={this.state.}
-            onchange={e => this.change(e)} />
-        </label> */}
+          <input
+            name="profilePic"
+            placeholder="profilePic"
+            value={this.state.profilePic}
+            onchange={e => this.change(e)}
+          />
+        </label>
 
         <label>
           Location:
@@ -108,10 +126,15 @@ class userForm extends Component {
           />
         </label>
 
-        {/* <label>
+        <label>
           spacialty:
-          <input type="text" ref={input => (this.input = input)} />
-        </label> */}
+          <input
+            name="specialty"
+            placeholder="specialty"
+            value={this.state.specialty}
+            onchange={e => this.change(e)}
+          />
+        </label>
 
         <label>
           projects:
@@ -123,7 +146,7 @@ class userForm extends Component {
           />
         </label>
 
-        <label>
+        {/* <label>
           comments:
           <input
             name="comments"
@@ -131,9 +154,9 @@ class userForm extends Component {
             value={this.state.comments}
             onchange={e => this.change(e)}
           />
-        </label>
+        </label> */}
 
-        <label>
+        {/* <label>
           post:
           <input
             name="post"
@@ -141,9 +164,9 @@ class userForm extends Component {
             value={this.state.post}
             onchange={e => this.change(e)}
           />
-        </label>
+        </label> */}
 
-        <label>
+        {/* <label>
           Jobs:
           <input
             name="Jobs"
@@ -151,7 +174,7 @@ class userForm extends Component {
             value={this.state.jobs}
             onchange={e => this.change(e)}
           />
-        </label>
+        </label> */}
         <button onClick={e => this.onSubmit(e)} />
         <input type="submit" value="Submit" />
       </form>
