@@ -16,11 +16,6 @@ class JobCreate extends Component {
     }
 
     onChange = (e) => {
-        /*
-          Because we named the inputs to match their
-          corresponding values in state, it's
-          super easy to update the state
-        */
         this.setState({ [e.target.name]: e.target.value });
       }
 
