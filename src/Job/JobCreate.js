@@ -26,6 +26,7 @@ class JobCreate extends Component {
 
         axios.post('/', { position, company, logoURL, content })
           .then((result) => {
+              console.log(result)
             //access the results here....
           });
       }
