@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import userForm from "./userForm";
 
-class userProfile extends Component {
+class UserProfile extends Component {
   render() {
-    return <div />;
+    return;
+    <div />;
   }
 }
 
-export default userProfile;
+export default UserProfile;
