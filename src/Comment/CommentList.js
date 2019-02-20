@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import './Comments.css'
 class CommentList extends Component {
     render() {
         const comments = this.props.comments.map(item => {
