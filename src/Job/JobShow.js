@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
-// import { Route, Link, Switch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import axios from 'axios'
-
-const apiURL = 'https://devbook-backend.herokuapp.com/'
 
 class JobShow extends Component {
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            job: []
+            job: {}
         }
     }
 
     componentDidMount() {
-        const jobid = this.props.match.params.id
-        const url = `${apiURL}${jobid}`
-
-        axios.get(url)
+        axios.get('/api/job/' + this.props.match.params.id)
           .then((res) => {
             this.setState({
                 job: res.data
@@ -27,20 +22,26 @@ class JobShow extends Component {
             console.log(err)
           })
       }
+
+      delete(id){
+        console.log(id);
+        axios.delete('/api/job/'+id)
+          .then((res) => {
+            this.props.history.push("/")
+          });
+      }
     
     render() {
         return (
             <div key={this.state.job.position}>
-                <h1>{this.state.job.position}</h1>
-                <h2>{this.state.job.company}</h2>
+                <h1>Position: {this.state.job.position}</h1>
+                <h2>Company: {this.state.job.company}</h2>
                 <p>{this.state.job.logoURL}</p>
-                <p>{this.state.job.content}</p>
-                {/* <Link to="/updatejobs">
-                    <a href="/updatejobs"> <button value="update" type="update">Update</button></a>
+                <p>Info: {this.state.job.content}</p>
+                <Link to={`/edit/${this.state.job._id}`}>
+                    <button value="update" type="update">Update</button>
                 </Link>
-                <Link to="/">
-                    <a href="/"> <button value="delete" type="submit"onClick={this.handleDelete}>Delete</button></a>
-                </Link> */}
+                <button value="delete" type="submit"onClick={this.handleDelete}>Delete</button>
             </div>
         );
     }
