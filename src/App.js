@@ -15,18 +15,17 @@ class App extends Component {
     };
   }
 
-  componentDidMount() {
-    axios
-      .get(`http://www.ourapi.com/{this.props.jobid}.json`)
-      .then(res => {
-        this.setState({
-          job: res.data
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
+  // componentDidMount() {
+  //   axios.get(`http://www.ourapi.com/{this.props.jobid}.json`)
+  //     .then((res) => {
+  //       this.setState({
+  //           job: res.data
+  //        });
+  //     })
+  //     .catch((err) => {
+  //       console.log(err)
+  //     })
+  // }
 
   render() {
     return (
@@ -39,6 +38,9 @@ class App extends Component {
             <JobsList jobs={this.state.jobs} {...routerProps} {...this.state} />
           )}
         />
+        <h4>
+          <Link to="/job/create">Create A Job post</Link>
+        </h4>
       </div>
     );
   }
