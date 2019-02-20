@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-// import userProfile from './userProfile'
+// import index from "../index";
 import axios from "axios";
-
+import UserProfile from "./UserProfile";
 class UserForm extends Component {
   constructor() {
     super();
@@ -31,10 +31,13 @@ class UserForm extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    axios.post("http://localhost:3001/user", this.state).then(res => {
-      console.log(res);
-      console.log(res.data);
-    });
+    console.log("the button is working");
+    axios
+      .post("https://devbook-backend.herokuapp.com", this.state)
+      .then(res => {
+        console.log(res);
+        console.log(res.data);
+      });
     console.log("Onsubmit Fired");
   }
 
@@ -56,7 +59,7 @@ class UserForm extends Component {
           value={this.state.firstName}
           onChange={e => this.change(e)}
         />
-
+        <br />
         <label>LastName:</label>
         <input
           name="lastName"
@@ -64,6 +67,7 @@ class UserForm extends Component {
           value={this.state.lastName}
           onChange={e => this.change(e)}
         />
+        <br />
 
         <label>email:</label>
         <input
@@ -72,6 +76,7 @@ class UserForm extends Component {
           value={this.state.email}
           onChange={e => this.change(e)}
         />
+        <br />
 
         <label>Profile Picture:</label>
         <input
@@ -80,6 +85,7 @@ class UserForm extends Component {
           value={this.state.profilePic}
           onChange={e => this.change(e)}
         />
+        <br />
 
         <label>Location:</label>
         <input
@@ -88,6 +94,7 @@ class UserForm extends Component {
           value={this.state.location}
           onChange={e => this.change(e)}
         />
+        <br />
 
         <label>employer:</label>
         <input
@@ -96,6 +103,7 @@ class UserForm extends Component {
           value={this.state.employer}
           onChange={e => this.change(e)}
         />
+        <br />
 
         <label>GithubURL:</label>
         <input
@@ -104,6 +112,7 @@ class UserForm extends Component {
           value={this.state.gitHubUrl}
           onChange={e => this.change(e)}
         />
+        <br />
 
         <label>spacialty:</label>
         <input
@@ -112,6 +121,7 @@ class UserForm extends Component {
           value={this.state.specialty}
           onChange={e => this.change(e)}
         />
+        <br />
 
         <label>projects:</label>
         <input
@@ -120,36 +130,7 @@ class UserForm extends Component {
           value={this.state.projects}
           onChange={e => this.change(e)}
         />
-
-        {/* <label>
-          comments:</label>
-          <input
-            name="comments"
-            placeholder="comments"
-            value={this.state.comments}
-            onChange={e => this.change(e)}
-          />
- */}
-
-        {/* <label>
-          post:
-          <input
-            name="post"
-            placeholder="post"
-            value={this.state.post}
-            onChange={e => this.change(e)}
-          />
-        </label> */}
-
-        {/* <label>
-          Jobs:
-          <input
-            name="Jobs"
-            placeholder="jobs"
-            value={this.state.jobs}
-            onChange={e => this.change(e)}
-          />
-        </label> */}
+        <br />
         <input type="submit" value="Submit" />
       </form>
     );
