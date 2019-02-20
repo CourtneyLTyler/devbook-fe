@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import index from "../index";
+// import userProfile from './userProfile'
 import axios from "axios";
 
 class UserForm extends Component {
@@ -24,19 +24,17 @@ class UserForm extends Component {
     this.onSubmit = this.onSubmit.bind(this);
   }
   change(e) {
-    this.setState({ [e.target.name]: e.target.value },
-      () => {
-        console.log(this.state)
-      })
+    this.setState({ [e.target.name]: e.target.value }, () => {
+      console.log(this.state);
+    });
   }
 
   onSubmit(e) {
-    e.preventDefault()
-    axios.post('http://localhost:3001/user', this.state)
-      .then(res => {
-        console.log(res)
-        console.log(res.data)
-      })
+    e.preventDefault();
+    axios.post("http://localhost:3001/user", this.state).then(res => {
+      console.log(res);
+      console.log(res.data);
+    });
     console.log("Onsubmit Fired");
   }
 

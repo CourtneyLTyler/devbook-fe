@@ -1,22 +1,14 @@
-// import React, { Component } from "react";
-// import
+import React, { Component } from "react";
 
-// class UserProfile extends Component {
-//   constructor(){
-//     super()
-//     this.state = {
-//       {...this.state}
-//     }
-//   }
-//   axios.get({})
-//   render() {
-//     return (
-//       <div>
+class userProfile extends Component {
+  render() {
+    console.log(this.props);
+    return (
+      <div>
+        <h1>Hello {this.props.firstname}</h1>
+      </div>
+    );
+  }
+}
 
-//         <p> this is the profile</p>
-//       </div>
-//     );
-//   }
-// }
-
-// export default UserProfile;
+export default userProfile;

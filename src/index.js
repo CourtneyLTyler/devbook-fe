@@ -1,13 +1,17 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import App from "./App";
+// import App from "./App";
 import { BrowserRouter as Router } from "react-router-dom";
-// import userForm from "./user/userForm";
+// import UserForm from "./user/userForm";
+import userProfile from "./user/UserProfile";
+import userForm from "./User/UserForm";
 
 ReactDOM.render(
   <Router>
-    <App />
+    <UserForm />
   </Router>,
   document.getElementById("root")
 );
+
+ReactDOM.render(<userProfile />, document.getElementById("root"));
