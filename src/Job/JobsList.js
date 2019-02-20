@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import { Route, Link, Switch } from 'react-router-dom'
 
 class JobsList extends Component {
 
@@ -22,8 +23,8 @@ class JobsList extends Component {
         if(this.state.jobs) {
         let list = this.state.jobs.map(cv => {
             return (
-            <div key={cv.position}>
-                <a href={"http://localhost:3001/jobs/" + cv._id}><p>{cv.position}</p></a>
+            <div key={cv._id}>
+                <Link to={"/jobs/" + cv._id}><p>{cv.position}</p></Link>
                 <p>{cv.company}</p>
                 <img src="{cv.logoURL}"/>
                 <p>{cv.content}</p>     

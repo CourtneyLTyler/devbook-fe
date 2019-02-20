@@ -39,7 +39,7 @@ class JobShow extends Component {
                 <p>{this.state.job.logoURL}</p>
                 <p>Info: {this.state.job.content}</p>
                 <p>Location: {this.state.job.location}</p>
-                <Link to={`/edit/${this.state.job._id}`}>
+                <Link to={`/jobs/edit/${this.state.job._id}`}>
                     <button value="update" type="update">Update</button>
                 </Link>
                 <button value="delete" type="submit"onClick={this.handleDelete}>Delete</button>

@@ -7,6 +7,7 @@ import CommentList from './Comment/CommentList';
 import JobCreate from "../src/Job/JobCreate";
 import JobShow from "../src/Job/JobShow";
 import JobsList from "../src/Job/JobsList";
+import JobUpdate from "../src/Job/JobUpdate"
 import axios from "axios";
 
 class App extends Component {
@@ -44,18 +45,30 @@ class App extends Component {
     return (
       <div className="App">
         <p>Hello</p>
+        <UserForm />
         <CreateComment />
-        <Route path='/comments' render={(routerProps) =>
+        {/* <Switch> */}
+        <Route path='/comments' exact render={(routerProps) =>
           <CommentList {...routerProps} {...this.state} />}
         />
-        <UserForm />
+
         <Route
-          path="/jobs"
-          render={routerProps => (
+          path="/jobs/:id" exact render={routerProps => (
+            <JobShow jobs={this.state.jobs} {...routerProps} {...this.state} />
+          )}
+        />        
+
+        <Route path='/jobs/new' exact render={(routerProps) => <JobCreate {...routerProps} {...this.state}/>}/>
+
+        <Route path='/jobs/edit/:id' exact render={(routerProps) => <JobUpdate {...routerProps} {...this.state}/>}/>
+
+
+        <Route
+          path="/jobs" exact render={routerProps => (
             <JobsList jobs={this.state.jobs} {...routerProps} {...this.state} />
           )}
         />
-        <Route path='/jobs/new' render={(routerProps) => <JobCreate {...routerProps} {...this.state}/>}/>
+        {/* </Switch> */}
         <h4>
           <Link to="/jobs/new">Create A Job post</Link>
         </h4>
