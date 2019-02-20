@@ -37,6 +37,7 @@ class App extends Component {
         {/* < Route path="/" > */}
         <UserForm /> 
         {/* </Route> */}
+        <h4><Link to="/job/create">Create A Job post</Link></h4>
         < Route path="/jobs" render={(routerProps)=>< JobsList jobs={this.state.jobs} {...routerProps} {...this.state}/>} />
 
       </div>

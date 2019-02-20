@@ -24,10 +24,11 @@ class JobCreate extends Component {
         // get our form data out of state
         const { position, company, logoURL, content } = this.state;
 
-        axios.post('/', { position, company, logoURL, content })
+        axios.post('/ourapi/job', { position, company, logoURL, content })
           .then((result) => {
               console.log(result)
-            //access the results here....
+              // whatever the route to the jobs list is
+              this.props.history.push("/jobs")
           });
       }
 
@@ -35,24 +36,28 @@ class JobCreate extends Component {
         const { position, company, logoURL, content } = this.state
         return (
             <form onSubmit={this.onSubmit}>
+            <label for="position">Position:</label>
             <input
               type="text"
               name="position"
               value={position}
               onChange={this.onChange}
             />
+            <label for="company">Company:</label>
             <input
               type="text"
               name="company"
               value={company}
               onChange={this.onChange}
             />
+            <label for="logoURL">Logo URL:</label>
             <input
               type="text"
               name="logoURL"
               value={logoURL}
               onChange={this.onChange}
             />
+            <label for="content">Content:</label>
             <input
               type="text"
               name="content"
