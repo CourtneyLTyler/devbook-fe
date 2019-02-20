@@ -12,7 +12,7 @@ class JobShow extends Component {
     }
 
     componentDidMount() {
-        axios.get('/api/job/' + this.props.match.params.id)
+        axios.get('http://localhost:3001/jobs/' + this.props.match.params.id)
           .then((res) => {
             this.setState({
                 job: res.data
@@ -25,7 +25,7 @@ class JobShow extends Component {
 
       delete(id){
         console.log(id);
-        axios.delete('/api/job/'+id)
+        axios.delete('http://localhost:3001/jobs/'+id)
           .then((res) => {
             this.props.history.push("/")
           });
@@ -38,6 +38,7 @@ class JobShow extends Component {
                 <h2>Company: {this.state.job.company}</h2>
                 <p>{this.state.job.logoURL}</p>
                 <p>Info: {this.state.job.content}</p>
+                <p>Location: {this.state.job.location}</p>
                 <Link to={`/edit/${this.state.job._id}`}>
                     <button value="update" type="update">Update</button>
                 </Link>

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios'
 
 class JobsList extends Component {
 
@@ -10,7 +11,7 @@ class JobsList extends Component {
       }
 
       componentDidMount() {
-        axios.get('/ourapi/jobs')
+        axios.get('http://localhost:3001/jobs')
           .then(res => {
             this.setState({ jobs: res.data });
             console.log(this.state.jobs);
@@ -22,10 +23,11 @@ class JobsList extends Component {
         let list = this.state.jobs.map(cv => {
             return (
             <div key={cv.position}>
-                <a href={"/jobs/" + cv._id}><p>{cv.position}</p></a>
+                <a href={"http://localhost:3001/jobs/" + cv._id}><p>{cv.position}</p></a>
                 <p>{cv.company}</p>
                 <img src="{cv.logoURL}"/>
-                <p>{cv.content}</p>           
+                <p>{cv.content}</p>     
+                <p>{cv.location}</p>        
             </div>
             )      
         })

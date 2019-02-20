@@ -9,7 +9,8 @@ class JobCreate extends Component {
         position: '',
         company: '',
         logoURL: '',
-        content: ''
+        content: '',
+        location: ''
         };
         this.onChange = this.onChange.bind(this)
         this.onSubmit = this.onSubmit.bind(this)
@@ -17,51 +18,60 @@ class JobCreate extends Component {
 
     onChange = (e) => {
         this.setState({ [e.target.name]: e.target.value });
+        console.log(this.state)
       }
 
       onSubmit = (e) => {
         e.preventDefault();
+        console.log("form has been submitted")
         // get our form data out of state
-        const { position, company, logoURL, content } = this.state;
+        // const { position, company, logoURL, content, location } = this.state;
 
-        axios.post('/ourapi/job', { position, company, logoURL, content })
+        axios.post('http://localhost:3001/jobs', this.state)
           .then((result) => {
               console.log(result)
               // whatever the route to the jobs list is
-              this.props.history.push("/jobs")
+              this.props.history.push("http://localhost:3001/jobs")
           });
       }
 
     render() {
-        const { position, company, logoURL, content } = this.state
+        const { position, company, logoURL, content, location } = this.state
         return (
             <form onSubmit={this.onSubmit}>
-            <label for="position">Position:</label>
+            <label>Position:</label>
             <input
               type="text"
               name="position"
               value={position}
               onChange={this.onChange}
             />
-            <label for="company">Company:</label>
+            <label >Company:</label>
             <input
               type="text"
               name="company"
               value={company}
               onChange={this.onChange}
             />
-            <label for="logoURL">Logo URL:</label>
+            <label >Logo URL:</label>
             <input
               type="text"
               name="logoURL"
               value={logoURL}
               onChange={this.onChange}
             />
-            <label for="content">Content:</label>
+            <label >Content:</label>
             <input
               type="text"
               name="content"
               value={content}
+              onChange={this.onChange}
+            />
+            <label >Location:</label>
+            <input
+              type="text"
+              name="location"
+              value={location}
               onChange={this.onChange}
             />
             <button type="submit">Submit</button>

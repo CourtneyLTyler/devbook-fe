@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
-import UserForm from "./User/UserForm";
+import UserForm from "./user/UserForm";
 import CreateComment from '../src/Comment/CommentCreate'
 import CommentList from './Comment/CommentList';
 import JobCreate from "../src/Job/JobCreate";
@@ -31,7 +31,7 @@ class App extends Component {
   // }
 
   componentDidMount() {
-    Axios.get('http://localhost:3001/comments')
+    axios.get('http://localhost:3001/comments')
       .then((res) => {
         console.log(res)
         this.setState({ comments: res.data })
@@ -55,9 +55,11 @@ class App extends Component {
             <JobsList jobs={this.state.jobs} {...routerProps} {...this.state} />
           )}
         />
+        <Route path='/jobs/new' render={(routerProps) => <JobCreate {...routerProps} {...this.state}/>}/>
         <h4>
-          <Link to="/job/create">Create A Job post</Link>
+          <Link to="/jobs/new">Create A Job post</Link>
         </h4>
+        
       </div>
     );
   }
