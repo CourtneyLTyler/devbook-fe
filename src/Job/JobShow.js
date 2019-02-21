@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import CommentCreate from '../Comment/CommentCreate'
+import CommentList from '../Comment/CommentList'
+import './Job.css'
 
 class JobShow extends Component {
 
@@ -58,7 +60,7 @@ class JobShow extends Component {
 
   render() {
     return (
-      <div key={this.state.job.position} className='indiv-comment'>
+      <div key={this.state.job.position} className='indiv-job'>
         <h1>Position: {this.state.job.position}</h1>
         <h2>Company: {this.state.job.company}</h2>
         <p>{this.state.job.logoURL}</p>
@@ -71,7 +73,8 @@ class JobShow extends Component {
         <Link to='/jobs'>
           <button value="delete" type="submit" onClick={this.handleDelete}>Delete</button>
         </Link>
-        < CommentCreate />
+        <CommentList />
+        <CommentCreate />
       </div>
     );
   }
