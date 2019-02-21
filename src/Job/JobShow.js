@@ -44,12 +44,17 @@ class JobShow extends Component {
         e.preventDefault();
     
         axios.delete(`http://localhost:3001/jobs/${this.state.job._id}`)
-          .then(res => {
-            console.log(res);
-            console.log(res.data);
+          .then((res) => {
+            console.log(res.data)
+            this.setState({
+                job: {}
+            })
+            window.location.reload()
+          })
+          .catch((err) => {
+              console.log(err)
           })
       }
-
 
     render() {
         return (
