@@ -81,6 +81,7 @@ class ProjectShow extends Component {
   }
 }
 export default ProjectShow;
+
 // Projects:
 //     • linkToRepo: String
 //     • title: String
