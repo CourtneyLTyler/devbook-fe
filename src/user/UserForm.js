@@ -49,7 +49,7 @@ class UserForm extends Component {
           value={this.state.userName}
           onChange={e => this.change(e)}
         />
-
+        <br />
         <label>FirstName:</label>
         <input
           name="firstName"

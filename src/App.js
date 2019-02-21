@@ -77,11 +77,6 @@ class App extends Component {
               render={routerProps => <JobShow {...routerProps} />}
             />
           </Switch>
-          <Route
-            exact
-            path="/"
-            render={routerProps => <Home {...routerProps} />}
-          />
         </main>
       </div>
     );
