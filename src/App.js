@@ -3,6 +3,7 @@ import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
 import UserForm from "./user/UserForm";
 import CreateComment from '../src/Comment/CommentCreate'
+import CommentUpdate from '../src/Comment/CommentUpdate'
 import CommentList from './Comment/CommentList';
 import JobCreate from "../src/Job/JobCreate";
 import JobShow from "../src/Job/JobShow";
@@ -52,15 +53,19 @@ class App extends Component {
           <CommentList {...routerProps} {...this.state} />}
         />
 
+        <Route path='/comments' exact render={(routerProps) =>
+          <CommentUpdate {...routerProps} {...this.state} />}
+        />
+
         <Route
           path="/jobs/:id" exact render={routerProps => (
             <JobShow jobs={this.state.jobs} {...routerProps} {...this.state} />
           )}
-        />        
+        />
 
-        <Route path='/jobs/new' exact render={(routerProps) => <JobCreate {...routerProps} {...this.state}/>}/>
+        <Route path='/jobs/new' exact render={(routerProps) => <JobCreate {...routerProps} {...this.state} />} />
 
-        <Route path='/jobs/edit/:id' exact render={(routerProps) => <JobUpdate {...routerProps} {...this.state}/>}/>
+        <Route path='/jobs/edit/:id' exact render={(routerProps) => <JobUpdate {...routerProps} {...this.state} />} />
 
 
         <Route
@@ -72,7 +77,7 @@ class App extends Component {
         <h4>
           <Link to="/jobs/new">Create A Job post</Link>
         </h4>
-        
+
       </div>
     );
   }

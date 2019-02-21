@@ -9,10 +9,10 @@ class CommentList extends Component {
                     <p>Comment: {item.content}</p>
                     <p>Comment ID: {item._id}</p>
                     <p>Likes: {item.likes}</p>
-                    {/* <Link to={`/comments/edit/${this.state.comment._id}`}>
-                        <button>Update</button>
+                    <Link to={`/comments/edit/${this.state.comment._id}`}>
+                        <button value='update' type='update'>Update</button>
                     </Link>
-                    <button>Delete</button> */}
+                    <button>Delete</button>
                 </div>
             )
         })
