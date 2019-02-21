@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import axios from 'axios'
+import './Comments.css'
 
-class CommentCreate extends Component {
+class CommentUpdate extends Component {
     constructor() {
         super()
         this.state = {
@@ -9,6 +10,18 @@ class CommentCreate extends Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
+    }
+
+    componentDidMount() {
+        axios.get('http://localhost:3001/comments' + this.props.match.params.id)
+            .then(res => {
+                this.setState({
+                    content: res.data
+                })
+            })
+            .catch((err) => {
+                console.log(err)
+            })
     }
 
     handleChange(evt) {
@@ -20,7 +33,7 @@ class CommentCreate extends Component {
 
     handleSubmit(evt) {
         evt.preventDefault()
-        axios.post('http://localhost:3001/comments', this.state)
+        axios.put('http://localhost:3001/comments', this.state)
             .then(res => {
                 console.log(res)
                 console.log(res.data)
@@ -43,4 +56,4 @@ class CommentCreate extends Component {
     }
 }
 
-export default CommentCreate;
+export default CommentUpdate;

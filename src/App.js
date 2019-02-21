@@ -15,7 +15,7 @@ class App extends Component {
     return (
       <div className="App">
         <nav>
-          
+
           <Link to="/">
             <h1>DevBook</h1>
           </Link>
@@ -32,26 +32,23 @@ class App extends Component {
             <h1>Create A Job post</h1>
           </Link>
         </nav>
-        
+
         <main>
-        {/* <Route path='/user/:id' exact render={(routerProps) => <UserProfile {...routerProps} {...this.state} />} /> */}
-        <Route exact path='/' render={(routerProps) => <Home {...routerProps}  /> } />
+          {/* <Route path='/user/:id' exact render={(routerProps) => <UserProfile {...routerProps} {...this.state} />} /> */}
+          <Route exact path='/' render={(routerProps) => <Home {...routerProps} />} />
 
-        <Route exact path='/user/new' render={(routerProps) => <UserForm {...routerProps}  /> } />
+          <Route exact path='/user/new' render={(routerProps) => <UserForm {...routerProps} />} />
 
-        <Route exact path="/jobs/:id" render={(routerProps) => <JobShow  {...routerProps}  /> }/>        
+          <Route exact path="/jobs/:id" render={(routerProps) => <JobShow  {...routerProps} />} />
 
-        <Route exact path="/jobs/new" render={(routerProps) => <JobCreate {...routerProps} />}/>
+          <Route exact path="/jobs/new" render={(routerProps) => <JobCreate {...routerProps} />} />
 
-        <Route exact path='/jobs/edit/:id' render={(routerProps) => <JobUpdate {...routerProps} />}/>
+          <Route exact path='/jobs/edit/:id' render={(routerProps) => <JobUpdate {...routerProps} />} />
 
-        <Route
-          exact path="/jobs" render={routerProps => (
-            <JobsList {...routerProps}  />
-          )}
-        />
+          <Route
+            exact path="/jobs" render={routerProps => (<JobsList {...routerProps} />)} />
         </main>
-        
+
       </div>
     );
   }
