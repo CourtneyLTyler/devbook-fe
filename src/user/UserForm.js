@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import UserProfile from "./UserProfile";
+// import UserProfile from "./UserProfile";
 class UserForm extends Component {
   constructor() {
     super();
