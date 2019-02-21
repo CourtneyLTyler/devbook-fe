@@ -25,6 +25,7 @@ class CommentList extends Component {
                     <p>Comment: {item.content}</p>
                     <p>Comment ID: {item._id}</p>
                     <p>Likes: {item.likes}</p>
+                    <p>Author: {item.user}</p>
                     <Link to={`/comments/edit/${item._id}`}>
                         <button>Update</button>
                     </Link>
