@@ -32,7 +32,7 @@ class App extends Component {
         </nav>
 
         <main>
-          {/* <Route path='/user/:id' exact render={(routerProps) => <UserProfile {...routerProps} {...this.state} />} /> */}
+          <Route path='/user/:id' exact render={(routerProps) => <UserProfile {...routerProps} {...this.state} />} />
 
           <Route
             path="/user/:id"
@@ -77,11 +77,7 @@ class App extends Component {
               render={routerProps => <JobShow {...routerProps} />}
             />
           </Switch>
-          <Route
-            exact
-            path="/"
-            render={routerProps => <Home {...routerProps} />}
-          />
+
         </main>
       </div>
     );
