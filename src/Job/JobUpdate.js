@@ -36,7 +36,7 @@ class JobUpdate extends Component {
         this.setState({job:state});
       }
 
-
+// not sure why the .catch won't work
     onSubmit = (e) => {
         e.preventDefault();
         const { position, company, logoURL, content, location } = this.state.job
@@ -50,11 +50,7 @@ class JobUpdate extends Component {
         // .catch((err) => {
         //     console.log(err)
         // })
-
     }
-
-
-
 
     render() {
         const { position, company, logoURL, content, location } = this.state.job
@@ -63,19 +59,19 @@ class JobUpdate extends Component {
                 <h3>Edit Job Post</h3>
                 <form onSubmit={this.onSubmit}>
                     <label >Position:</label>
-                    <input type="text" name="position" value={position} placeholder={position} onChange={this.onChange}
+                    <input type="text" name="position" value={position} onChange={this.onChange}
                     />
                     <label >Company:</label>
-                    <input type="text" name="company" value={company} placeholder={company}  onChange={this.onChange}
+                    <input type="text" name="company" value={company} onChange={this.onChange}
                     />
                     <label >Logo URL:</label>
-                    <input type="text" name="logoURL" value={logoURL} placeholder={logoURL}  onChange={this.onChange}
+                    <input type="text" name="logoURL" value={logoURL}  onChange={this.onChange}
                     />
                     <label >Content:</label>
-                    <input type="text" name="content" value={content} placeholder={content}  onChange={this.onChange}
+                    <input type="text" name="content" value={content} onChange={this.onChange}
                     />
                     <label >Location:</label>
-                    <input type="text" name="location" value={location} placeholder={location}  onChange={this.onChange}
+                    <input type="text" name="location" value={location} onChange={this.onChange}
                     />
                     <button type="submit">Submit</button>
                 </form>

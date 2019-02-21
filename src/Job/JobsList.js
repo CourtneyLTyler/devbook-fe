@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios'
-import { Route, Link, Switch } from 'react-router-dom'
+import { Link } from 'react-router-dom'
+import CommentCreate from '../Comment/CommentCreate'
 
 class JobsList extends Component {
 
@@ -26,9 +27,10 @@ class JobsList extends Component {
             <div key={cv._id}>
                 <Link to={"/jobs/" + cv._id}><p>{cv.position}</p></Link>
                 <p>{cv.company}</p>
-                <img src="{cv.logoURL}"/>
+                <img src="{cv.logoURL}" alt="company logo"/>
                 <p>{cv.content}</p>     
-                <p>{cv.location}</p>        
+                <p>{cv.location}</p>     
+                < CommentCreate />
             </div>
             )      
         })

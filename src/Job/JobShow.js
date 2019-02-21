@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
 import axios from 'axios'
+import CommentCreate from '../Comment/CommentCreate'
 
 class JobShow extends Component {
 
@@ -58,12 +59,14 @@ class JobShow extends Component {
                 <p>{this.state.job.logoURL}</p>
                 <p>Info: {this.state.job.content}</p>
                 <p>Location: {this.state.job.location}</p>
+                
                 <Link to={`/jobs/edit/${this.state.job._id}`}>
                     <button value="update" type="update">Update</button>
                 </Link>
                 <Link to='/jobs'>
                 <button value="delete" type="submit"onClick={this.handleDelete}>Delete</button>
                 </Link>
+                < CommentCreate />
             </div>
         );
     }
