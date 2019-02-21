@@ -119,7 +119,7 @@ class UserForm extends Component {
         />
         <br />
 
-        <label>Projects:</label>
+        <label>'Projects:</label>
         <input
           name="projects"
           placeholder="projects"
