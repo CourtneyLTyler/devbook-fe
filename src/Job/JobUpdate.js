@@ -13,11 +13,13 @@ class JobUpdate extends Component {
       }
 
     componentDidMount() {
-        axios.get('http://localhost:3001/jobs'+ this.props.match.params.id)
+        console.log('http://localhost:3001/jobs/'+this.props.match.params.id)
+        axios.get('http://localhost:3001/jobs/'+ this.props.match.params.id)
         .then(res => {
             this.setState({
                 job: res.data
             })
+            console.log("update component mount" + this.state)
         })
         .catch((err) => {
             console.log(err)
@@ -30,35 +32,43 @@ class JobUpdate extends Component {
     
     onSubmit = (e) => {
         e.preventDefault();
-        const { position, company, logoURL, content, location } = this.state.book
-
+        const { position, company, logoURL, content, location } = this.state.job
+// should I have this as axios.post??
         axios.put('http://localhost:3001/jobs/'+this.props.match.params.id, { position, company, logoURL, content, location })
             .then((res) => {
             console.log(res)
-            // the route to the job show
-            this.props.history.push("http://localhost:3001/jobs/"+this.props.match.params.id)
+            // the route to the jobs list
+            this.props.history.push("/jobs/")
         });
+        // .catch((err) => {
+        //     console.log(err)
+        // })
+
     }
 
+
+
+
     render() {
+        const { position, company, logoURL, content, location } = this.state
         return (
             <div>
                 <h3>Edit Job Post</h3>
                 <form onSubmit={this.onSubmit}>
                     <label >Position:</label>
-                    <input type="text" name="position" value={this.state.job.position} onChange={this.onChange}
+                    <input type="text" name="position" value={position} placeholder={position} onChange={this.onChange}
                     />
                     <label >Company:</label>
-                    <input type="text" name="company" value={this.state.job.company} onChange={this.onChange}
+                    <input type="text" name="company" value={company} placeholder={company}  onChange={this.onChange}
                     />
                     <label >Logo URL:</label>
-                    <input type="text" name="logoURL" value={this.state.job.logoURL} onChange={this.onChange}
+                    <input type="text" name="logoURL" value={logoURL} placeholder={logoURL}  onChange={this.onChange}
                     />
                     <label >Content:</label>
-                    <input type="text" name="content" value={this.state.job.content} onChange={this.onChange}
+                    <input type="text" name="content" value={content} placeholder={content}  onChange={this.onChange}
                     />
                     <label >Location:</label>
-                    <input type="text" name="location" value={this.state.job.location} onChange={this.onChange}
+                    <input type="text" name="location" value={location} placeholder={location}  onChange={this.onChange}
                     />
                     <button type="submit">Submit</button>
                 </form>

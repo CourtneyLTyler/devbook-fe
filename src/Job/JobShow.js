@@ -9,6 +9,7 @@ class JobShow extends Component {
         this.state = {
             job: {}
         }
+        this.handleDelete = this.handleDelete.bind(this)
     }
 
     componentDidMount() {
@@ -23,14 +24,32 @@ class JobShow extends Component {
           })
       }
 
-      delete(id){
-        console.log(id);
-        axios.delete('http://localhost:3001/jobs/'+id)
-          .then((res) => {
-            this.props.history.push("/")
-          });
-      }
+    //   handleDelete(){
+    //     console.log("deleting" + this.props.match.params.id);
+    //     axios.delete('http://localhost:3001/jobs/'+ this.props.match.params.id)
+    //       .then((res) => {
+    //         console.log(res.data)
+    //         this.context.history.push("/jobs")
+    //         this.setState({
+    //             job: {}
+    //         })
+    //       });
+    //     //   .catch((err)=> {
+    //     //     console.log(err)
+    //     //   })
+    //   }
     
+      handleDelete = e => {
+        e.preventDefault();
+    
+        axios.delete(`http://localhost:3001/jobs/${this.state.job._id}`)
+          .then(res => {
+            console.log(res);
+            console.log(res.data);
+          })
+      }
+
+
     render() {
         return (
             <div key={this.state.job.position}>
@@ -42,7 +61,9 @@ class JobShow extends Component {
                 <Link to={`/jobs/edit/${this.state.job._id}`}>
                     <button value="update" type="update">Update</button>
                 </Link>
+                <Link to='/jobs'>
                 <button value="delete" type="submit"onClick={this.handleDelete}>Delete</button>
+                </Link>
             </div>
         );
     }

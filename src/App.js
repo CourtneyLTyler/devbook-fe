@@ -62,7 +62,6 @@ class App extends Component {
 
         <Route path='/jobs/edit/:id' exact render={(routerProps) => <JobUpdate {...routerProps} {...this.state}/>}/>
 
-
         <Route
           path="/jobs" exact render={routerProps => (
             <JobsList jobs={this.state.jobs} {...routerProps} {...this.state} />
