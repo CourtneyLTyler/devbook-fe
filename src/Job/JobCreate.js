@@ -31,7 +31,7 @@ class JobCreate extends Component {
           .then((result) => {
               console.log(result)
               // whatever the route to the jobs list is
-              this.props.history.push("http://localhost:3001/jobs")
+              this.props.history.push("/jobs")
           });
       }
 
