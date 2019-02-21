@@ -19,17 +19,24 @@ class JobUpdate extends Component {
             this.setState({
                 job: res.data
             })
-            console.log("update component mount" + this.state)
+            console.log(this.state.job)
         })
         .catch((err) => {
             console.log(err)
         })
     }
 
-    onChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value });
-      }
+    // onChange = (e) => {
+    //     this.setState({ [e.target.name]: e.target.value });
+    //   }
     
+      onChange = (e) => {
+        const state = this.state.job
+        state[e.target.name] = e.target.value;
+        this.setState({job:state});
+      }
+
+
     onSubmit = (e) => {
         e.preventDefault();
         const { position, company, logoURL, content, location } = this.state.job
@@ -37,8 +44,8 @@ class JobUpdate extends Component {
         axios.put('http://localhost:3001/jobs/'+this.props.match.params.id, { position, company, logoURL, content, location })
             .then((res) => {
             console.log(res)
-            // the route to the jobs list
-            this.props.history.push("/jobs/")
+            // the route to the job show
+            this.props.history.push('/jobs/'+this.props.match.params.id)
         });
         // .catch((err) => {
         //     console.log(err)
@@ -50,7 +57,7 @@ class JobUpdate extends Component {
 
 
     render() {
-        const { position, company, logoURL, content, location } = this.state
+        const { position, company, logoURL, content, location } = this.state.job
         return (
             <div>
                 <h3>Edit Job Post</h3>
