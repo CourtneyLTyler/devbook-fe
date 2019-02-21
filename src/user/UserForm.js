@@ -93,7 +93,6 @@ class UserForm extends Component {
           onChange={e => this.change(e)}
         />
         <br />
-
         <label>Employer:</label>
         <input
           name="employer"
