@@ -5,41 +5,41 @@ import { Link } from "react-router-dom";
 // import Job from "../Job/JobsList";
 
 class ProjectList extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-          projects: []
-        };
-      }
+  constructor(props) {
+    super(props);
+    this.state = {
+      projects: []
+    };
+  }
 
-      componentDidMount() {
-        axios.get('http://localhost:3001/projects')
-          .then(res => {
-            this.setState({ projects: res.data });
-            console.log(this.state.projects);
-          });
-      }
+  componentDidMount() {
+    axios.get("http://localhost:3001/projects").then(res => {
+      this.setState({ projects: res.data });
+      console.log(this.state.projects);
+    });
+  }
 
-    render() {
-        if(this.state.projects) {
-        let list = this.state.projects.map(cv => {
-            return (
-            <div key={cv._id}>
-                <Link to={"/projects/" + cv._id}><p>{cv.position}</p></Link>
-                <p>{cv.company}</p>
-                <img src="{cv.logoURL}" alt="company logo"/>
-                <p>{cv.}</p>     
-                <p>{cv.}</p>     
-                < porjectsCreate />
-            </div>
-            )      
-        })
+  render() {
+    if (this.state.projects) {
+      let list = this.state.projects.map(cv => {
         return (
-            <div>
-                {list}
-            </div>
-        );}
+          <div key={cv._id}>
+            <Link to={"/projects/" + cv._id}>
+              <p>{cv.position}</p>
+            </Link>
+            <p>{cv.company}</p>
+            <img src="{cv.logoURL}" alt="company logo" />
+            <p>{cv.linkToRepo}</p>
+            <p>{cv.title}</p>
+            <p>{cv.description}</p>
+            <p>{cv.Thumbnail}</p>
+            <PorjectsCreate />
+          </div>
+        );
+      });
+      return <div>{list}</div>;
     }
+  }
 }
 
 export default ProjectList;
