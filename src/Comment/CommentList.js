@@ -17,7 +17,7 @@ class CommentList extends Component {
             )
         })
         return (
-            <div>
+            <div className='indiv-comment'>
                 {comments}
             </div>
         );
