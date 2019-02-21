@@ -7,23 +7,23 @@ class JobsList extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      projects: []
+      jobs: []
     };
   }
 
   componentDidMount() {
-    axios.get("http://localhost:3001/projects").then(res => {
-      this.setState({ projects: res.data });
-      console.log(this.state.projects);
+    axios.get("http://localhost:3001/jobs").then(res => {
+      this.setState({ jobs: res.data });
+      console.log(this.state.jobs);
     });
   }
 
   render() {
-    if (this.state.projects) {
-      let list = this.state.projects.map(cv => {
+    if (this.state.jobs) {
+      let list = this.state.jobs.map(cv => {
         return (
           <div key={cv._id}>
-            <Link to={"/projects/" + cv._id}>
+            <Link to={"/jobs/" + cv._id}>
               <p>{cv.title}</p>
             </Link>
             <p>{cv.company}</p>
