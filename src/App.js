@@ -8,6 +8,10 @@ import JobShow from "./Job/JobShow";
 import JobsList from "./Job/JobsList";
 import JobUpdate from "./Job/JobUpdate";
 import Home from "./Home/Home";
+import ProjectList from './Project/ProjectList'
+import ProjectCreate from './Project/ProjectCreate'
+import ProjectUpdate from './Project/ProjectUpdate'
+import ProjectShow from './Project/ProjectShow'
 
 class App extends Component {
   render() {
@@ -29,6 +33,12 @@ class App extends Component {
           <Link to="/jobs/new">
             <h1>Create A Job post</h1>
           </Link>
+          <Link to="/projects">
+          <h1>Project Posts</h1>
+          </Link>
+          <Link to="/projects/new">
+          <h1>Create Project</h1>
+          </Link>
         </nav>
 
         <main>
@@ -45,6 +55,30 @@ class App extends Component {
             exact
             path="/"
             render={routerProps => <Home {...routerProps} />}
+          />
+
+          <Route
+            exact
+            path="/projects"
+            render={routerProps => <ProjectList {...routerProps} />}
+          />
+
+          <Route
+            exact
+            path="/projects/new"
+            render={routerProps => <ProjectCreate {...routerProps} />}
+          />
+
+          <Route
+            exact
+            path="/projects/edit/:id"
+            render={routerProps => <ProjectUpdate {...routerProps} />}
+          />
+
+          <Route
+            exact
+            path="/projects/:id"
+            render={routerProps => <ProjectShow {...routerProps} />}
           />
 
           <Route

@@ -49,7 +49,7 @@ class UserForm extends Component {
           value={this.state.userName}
           onChange={e => this.change(e)}
         />
-
+        <br />
         <label>FirstName:</label>
         <input
           name="firstName"
@@ -75,7 +75,6 @@ class UserForm extends Component {
           onChange={e => this.change(e)}
         />
         <br />
-
         <label>Profile Picture:</label>
         <input
           name="profilePic"
@@ -93,7 +92,6 @@ class UserForm extends Component {
           onChange={e => this.change(e)}
         />
         <br />
-
         <label>Employer:</label>
         <input
           name="employer"

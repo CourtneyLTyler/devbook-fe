@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios'
 
 class ProjectCreate extends Component {
   constructor() {
@@ -24,7 +25,7 @@ class ProjectCreate extends Component {
 
     axios.post("http://localhost:3001/projects", this.state).then(result => {
       console.log(result);
-      this.props.history.push("http://localhost:3001/projects");
+      this.props.history.push("/projects");
     });
   };
 
