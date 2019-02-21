@@ -3,13 +3,14 @@ import axios from "axios";
 class UserProfile extends Component {
   constructor(props) {
     super(props);
-    profile: {
-    }
+    this.state = {
+      profile: {}
+    };
   }
 
   componentDidMount() {
     axios
-      .get("http://localhost:3001/user")
+      .get("http://localhost:3001/user/" + this.props.match.params.id)
       .then(res => {
         console.log(res);
         // What should i put here

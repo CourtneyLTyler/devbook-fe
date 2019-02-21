@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import UserProfile from "./UserProfile";
+// import UserProfile from "./UserProfile";
 class UserForm extends Component {
   constructor() {
     super();
@@ -31,7 +31,8 @@ class UserForm extends Component {
     e.preventDefault();
     console.log("the button is working");
     axios
-      .post("https://devbook-backend.herokuapp.com", this.state)
+      // .post("https://devbook-backend.herokuapp.com", this.state)
+      .post("http://localhost:3001/user", this.state)
       .then(res => {
         console.log(res);
         console.log(res.data);
