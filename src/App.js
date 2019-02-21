@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Route, Link } from "react-router-dom";
+import { Route, Link, Switch } from "react-router-dom";
 import UserForm from "./user/UserForm";
 // import UserProfile from "../user/UserProfile"
 import JobCreate from "./Job/JobCreate";
@@ -33,22 +33,19 @@ class App extends Component {
 
         <main>
           {/* <Route path='/user/:id' exact render={(routerProps) => <UserProfile {...routerProps} {...this.state} />} /> */}
-          <Route
-            exact
-            path="/"
-            render={routerProps => <Home {...routerProps} />}
-          />
+
 
           <Route
             exact
             path="/user/new"
             render={routerProps => <UserForm {...routerProps} />}
           />
+<Switch>
 
           <Route
             exact
-            path="/jobs/:id"
-            render={routerProps => <JobShow {...routerProps} />}
+            path="/jobs"
+            render={routerProps => <JobsList {...routerProps} />}
           />
 
           <Route
@@ -65,8 +62,14 @@ class App extends Component {
 
           <Route
             exact
-            path="/jobs"
-            render={routerProps => <JobsList {...routerProps} />}
+            path="/jobs/:id"
+            render={routerProps => <JobShow {...routerProps} />}
+          />
+</Switch>
+          <Route
+            exact
+            path="/"
+            render={routerProps => <Home {...routerProps} />}
           />
         </main>
       </div>

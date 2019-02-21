@@ -19,10 +19,15 @@ class JobShow extends Component {
             this.setState({
                 job: res.data
              });
+             console.log("JobShow componentDidMount")
           })
           .catch((err) => {
             console.log(err)
           })
+      }
+
+      componentWillUnmount() {
+        console.log("JobShow componentWillUnmount")
       }
 
     //   handleDelete(){
@@ -58,10 +63,10 @@ class JobShow extends Component {
 
     render() {
         return (
-            <div key={this.state.job.position}>
+            <div key={this.state.job._id}>
                 <h1>Position: {this.state.job.position}</h1>
                 <h2>Company: {this.state.job.company}</h2>
-                <p>{this.state.job.logoURL}</p>
+                <img src={this.state.job.logoURL} alt="company logo"/>
                 <p>Info: {this.state.job.content}</p>
                 <p>Location: {this.state.job.location}</p>
                 

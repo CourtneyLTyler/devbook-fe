@@ -6,9 +6,9 @@ import App from "./App";
 
 ReactDOM.render(
   <Router>
-    <UserForm />
+    <App />
   </Router>,
   document.getElementById("root")
 );
 
-ReactDOM.render(<userProfile />, document.getElementById("root"));
+// ReactDOM.render(<Ap />, document.getElementById("root"));

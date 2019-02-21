@@ -10,6 +10,17 @@ class CommentCreate extends Component {
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
     }
+    componentDidMount() {
+        console.log("CommentCreate componentDidMount")
+      }
+
+      componentWillMount() {
+        console.log("CommentCreate componentWillMount")
+      }
+
+    componentWillUnmount() {
+        console.log("CommentCreate componentWillUnmount")
+      }
 
     handleChange(evt) {
         this.setState({ [evt.target.name]: evt.target.value },
