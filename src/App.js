@@ -32,10 +32,8 @@ class App extends Component {
         </nav>
 
         <main>
-<<<<<<< HEAD
           {/* <Route path='/user/:id' exact render={(routerProps) => <UserProfile {...routerProps} {...this.state} />} /> */}
 
-=======
           <Route
             path="/user/:id"
             exact
@@ -48,39 +46,37 @@ class App extends Component {
             path="/"
             render={routerProps => <Home {...routerProps} />}
           />
->>>>>>> project
 
           <Route
             exact
             path="/user/new"
             render={routerProps => <UserForm {...routerProps} />}
           />
-<Switch>
+          <Switch>
+            <Route
+              exact
+              path="/jobs"
+              render={routerProps => <JobsList {...routerProps} />}
+            />
 
-          <Route
-            exact
-            path="/jobs"
-            render={routerProps => <JobsList {...routerProps} />}
-          />
+            <Route
+              exact
+              path="/jobs/new"
+              render={routerProps => <JobCreate {...routerProps} />}
+            />
 
-          <Route
-            exact
-            path="/jobs/new"
-            render={routerProps => <JobCreate {...routerProps} />}
-          />
+            <Route
+              exact
+              path="/jobs/edit/:id"
+              render={routerProps => <JobUpdate {...routerProps} />}
+            />
 
-          <Route
-            exact
-            path="/jobs/edit/:id"
-            render={routerProps => <JobUpdate {...routerProps} />}
-          />
-
-          <Route
-            exact
-            path="/jobs/:id"
-            render={routerProps => <JobShow {...routerProps} />}
-          />
-</Switch>
+            <Route
+              exact
+              path="/jobs/:id"
+              render={routerProps => <JobShow {...routerProps} />}
+            />
+          </Switch>
           <Route
             exact
             path="/"
