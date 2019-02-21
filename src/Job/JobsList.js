@@ -1,45 +1,39 @@
-import React, { Component } from 'react';
-import axios from 'axios'
-import { Link } from 'react-router-dom'
-import CommentCreate from '../Comment/CommentCreate'
-import './Job.css'
+import React, { Component } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+import "./Job.css";
 
 class JobsList extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      projects: []
+    };
+  }
 
-      constructor(props) {
-        super(props);
-        this.state = {
-          jobs: []
-        };
-      }
-
-      componentDidMount() {
-        axios.get('http://localhost:3001/jobs')
-          .then(res => {
-            this.setState({ jobs: res.data });
-            console.log(this.state.jobs);
-          });
-      }
+  componentDidMount() {
+    axios.get("http://localhost:3001/projects").then(res => {
+      this.setState({ projects: res.data });
+      console.log(this.state.projects);
+    });
+  }
 
   render() {
-    if (this.state.jobs) {
-      let list = this.state.jobs.map(cv => {
+    if (this.state.projects) {
+      let list = this.state.projects.map(cv => {
         return (
           <div key={cv._id}>
-            <Link to={"/jobs/" + cv._id}><p>{cv.position}</p></Link>
+            <Link to={"/projects/" + cv._id}>
+              <p>{cv.title}</p>
+            </Link>
             <p>{cv.company}</p>
-            <img src="{cv.logoURL}" alt="company logo" />
+            <img src="{cv.logoURL}" alt="Company Logo" />
             <p>{cv.content}</p>
             <p>{cv.location}</p>
-            < CommentCreate />
           </div>
-        )
-      })
-      return (
-        <div className='indiv-job'>
-          {list}
-        </div>
-      );
+        );
+      });
+      return <div className="indiv-job">{list}</div>;
     }
   }
 }

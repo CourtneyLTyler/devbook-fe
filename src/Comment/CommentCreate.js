@@ -11,17 +11,6 @@ class CommentCreate extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleChange = this.handleChange.bind(this);
   }
-  componentDidMount() {
-    console.log("CommentCreate componentDidMount");
-  }
-
-  componentWillMount() {
-    console.log("CommentCreate componentWillMount");
-  }
-
-  componentWillUnmount() {
-    console.log("CommentCreate componentWillUnmount");
-  }
 
   handleChange(evt) {
     this.setState({ [evt.target.name]: evt.target.value }, () => {
@@ -40,7 +29,6 @@ class CommentCreate extends Component {
   render() {
     return (
       <div className="indiv-comment">
-        <h1>Hello from CommentCreate Component</h1>
         <form onSubmit={this.handleSubmit}>
           <label>Comment:</label>
           <br />
