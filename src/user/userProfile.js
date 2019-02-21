@@ -1,18 +1,22 @@
 import React, { Component } from "react";
-
+// import { Link } from "react-router-dom";
+import axios from "axios";
 class UserProfile extends Component {
-  // constructor(props) {
-  //     super(props);
-  //     this.state = {
+  constructor(props) {
+    super(props);
+    profile: {
+    }
+  }
 
-  //     }
-  // }
   componentDidMount() {
     axios
       .get("http://localhost:3001/user")
       .then(res => {
         console.log(res);
-        this.setState({});
+        // What should i put here
+        this.setState({
+          profile: res.data
+        });
       })
       .catch(err => {
         console.log(err);
@@ -22,16 +26,15 @@ class UserProfile extends Component {
     return (
       <div>
         <h1>Your Profile</h1>
-        <h1> {this.props.userName}</h1>
-        <h1> {this.props.firstName}</h1>
-        <h1> {this.props.lastName}</h1>
-        <h1> {this.props.profilePic}</h1>
-        <h1> {this.props.gitHubUrl}</h1>
-        <h1> {this.props.email}</h1>
-        <h1> {this.props.employer}</h1>
-        <h1> {this.props.specialty}</h1>
-        <h1> {this.props.projects}</h1>
-        <h1> {this.props.email}</h1>
+        <h1> {this.state.profile.userName}</h1>
+        <h1> {this.state.profile.firstName}</h1>
+        <h1> {this.state.profile.lastName}</h1>
+        <h1> {this.state.profile.profilePic}</h1>
+        <h1> {this.state.profile.gitHubUrl}</h1>
+        <h1> {this.state.profile.email}</h1>
+        <h1> {this.state.profile.employer}</h1>
+        <h1> {this.state.profile.specialty}</h1>
+        <h1> {this.state.profile.projects}</h1>
       </div>
     );
   }

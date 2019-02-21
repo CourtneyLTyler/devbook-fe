@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-// import index from "../index";
 import axios from "axios";
 import UserProfile from "./UserProfile";
 class UserForm extends Component {
@@ -16,9 +15,6 @@ class UserForm extends Component {
       employer: "",
       specialty: "",
       projects: ""
-      // comments: "",
-      // post: "",
-      //jobs: ""
     };
     this.change = this.change.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
