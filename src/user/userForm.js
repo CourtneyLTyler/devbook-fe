@@ -65,7 +65,7 @@ class UserForm extends Component {
         />
         <br />
 
-        <label>email:</label>
+        <label>Email:</label>
         <input
           name="email"
           placeholder="email"
@@ -92,7 +92,7 @@ class UserForm extends Component {
         />
         <br />
 
-        <label>employer:</label>
+        <label>Employer:</label>
         <input
           name="employer"
           placeholder="employer"
@@ -110,7 +110,7 @@ class UserForm extends Component {
         />
         <br />
 
-        <label>spacialty:</label>
+        <label>Spacialty:</label>
         <input
           name="specialty"
           placeholder="specialty"
@@ -119,7 +119,7 @@ class UserForm extends Component {
         />
         <br />
 
-        <label>projects:</label>
+        <label>Projects:</label>
         <input
           name="projects"
           placeholder="projects"
