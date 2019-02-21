@@ -3,25 +3,15 @@ import axios from 'axios';
 import './Comments.css'
 
 class CommentCreate extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            content: ''
+            content: '',
+            id: this.props.id
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
     }
-    componentDidMount() {
-        console.log("CommentCreate componentDidMount")
-      }
-
-      componentWillMount() {
-        console.log("CommentCreate componentWillMount")
-      }
-
-    componentWillUnmount() {
-        console.log("CommentCreate componentWillUnmount")
-      }
 
     handleChange(evt) {
         this.setState({ [evt.target.name]: evt.target.value },
@@ -40,6 +30,7 @@ class CommentCreate extends Component {
         console.log("CreateComment Fired")
     }
     render() {
+        console.log(this.props.id)
         return (
             <div className='indiv-comment'>
                 <h1>Hello from CommentCreate Component</h1>
