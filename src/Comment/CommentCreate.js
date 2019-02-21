@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Axios from 'axios';
+import axios from 'axios';
 
 class CommentCreate extends Component {
     constructor() {
@@ -20,7 +20,7 @@ class CommentCreate extends Component {
 
     handleSubmit(evt) {
         evt.preventDefault()
-        Axios.post('http://localhost:3001/comments', this.state)
+        axios.post('http://localhost:3001/comments', this.state)
             .then(res => {
                 console.log(res)
                 console.log(res.data)
