@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import { Route, Link, Switch } from "react-router-dom";
 import UserForm from "./user/UserForm";
-// import UserProfile from "../user/UserProfile"
+import UserProfile from "./user/UserProfile";
 import JobCreate from "./Job/JobCreate";
 import JobShow from "./Job/JobShow";
 import JobsList from "./Job/JobsList";
@@ -23,17 +23,32 @@ class App extends Component {
           <Link to="/user/new">
             <h1>Create Profile</h1>
           </Link>
-          {/* <Link to="/user/:id">
+          <Link to="/user/:id">
             <h1>My Profile</h1>
-          </Link> */}
+          </Link>
           <Link to="/jobs/new">
             <h1>Create A Job post</h1>
           </Link>
         </nav>
 
         <main>
+<<<<<<< HEAD
           {/* <Route path='/user/:id' exact render={(routerProps) => <UserProfile {...routerProps} {...this.state} />} /> */}
 
+=======
+          <Route
+            path="/user/:id"
+            exact
+            render={routerProps => (
+              <UserProfile {...routerProps} {...this.state} />
+            )}
+          />
+          <Route
+            exact
+            path="/"
+            render={routerProps => <Home {...routerProps} />}
+          />
+>>>>>>> project
 
           <Route
             exact
