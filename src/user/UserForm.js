@@ -75,7 +75,6 @@ class UserForm extends Component {
           onChange={e => this.change(e)}
         />
         <br />
-
         <label>Profile Picture:</label>
         <input
           name="profilePic"
