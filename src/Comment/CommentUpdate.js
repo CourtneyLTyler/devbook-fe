@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios'
+import './Comments.css'
 
 class CommentUpdate extends Component {
     constructor() {
@@ -11,6 +12,18 @@ class CommentUpdate extends Component {
         this.handleChange = this.handleChange.bind(this)
     }
 
+    componentDidMount() {
+        axios.get('http://localhost:3001/comments' + this.props.match.params.id)
+            .then(res => {
+                this.setState({
+                    content: res.data
+                })
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
+
     handleChange(evt) {
         this.setState({ [evt.target.name]: evt.target.value },
             () => {
@@ -20,7 +33,7 @@ class CommentUpdate extends Component {
 
     handleSubmit(evt) {
         evt.preventDefault()
-        axios.post('http://localhost:3001/comments', this.state)
+        axios.put('http://localhost:3001/comments', this.state)
             .then(res => {
                 console.log(res)
                 console.log(res.data)
@@ -29,7 +42,7 @@ class CommentUpdate extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='indiv-comment'>
                 <h1>Hello from CommentCreate Component</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>Comment:</label>

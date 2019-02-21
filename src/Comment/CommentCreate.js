@@ -29,7 +29,7 @@ class CommentCreate extends Component {
     }
     render() {
         return (
-            <div>
+            <div className='indiv-comment'>
                 <h1>Hello from CommentCreate Component</h1>
                 <form onSubmit={this.handleSubmit}>
                     <label>Comment:</label>
