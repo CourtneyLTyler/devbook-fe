@@ -25,11 +25,17 @@ class UserProfile extends Component {
   render() {
     return (
       <div>
-        <h1>Your Profile</h1>
+        <h1>
+          Hey {this.state.profile.firstName} {this.state.profile.lastName} Check
+          Out Your Profile
+        </h1>
+        <img
+          src={this.state.profile.profilePic}
+          alt={this.state.profile.firstName}
+        />
         <h1> {this.state.profile.userName}</h1>
         <h1> {this.state.profile.firstName}</h1>
         <h1> {this.state.profile.lastName}</h1>
-        <h1> {this.state.profile.profilePic}</h1>
         <h1> {this.state.profile.gitHubUrl}</h1>
         <h1> {this.state.profile.email}</h1>
         <h1> {this.state.profile.employer}</h1>
