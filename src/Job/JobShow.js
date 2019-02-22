@@ -65,7 +65,7 @@ class JobShow extends Component {
         <button value="delete" type="submit" onClick={this.handleDelete}>Delete</button>
 
         <CommentList devPostId={this.state.devPostId} />
-        <CommentCreate />
+        <CommentCreate devPostId={this.state.devPostId} />
       </div>
     );
   }
