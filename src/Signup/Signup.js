@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 import "./Signup.css";
 
-class SignUpForm extends Component {
+class Signup extends Component {
   render() {
     return (
       <div>
@@ -25,7 +25,7 @@ class SignUpForm extends Component {
           <input
             value="Submit"
             type="submit"
-            onClick={this.props.handleSignUp}
+            onClick={this.props.handleSignup}
           />
         </form>
       </div>
