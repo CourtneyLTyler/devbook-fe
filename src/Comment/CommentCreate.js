@@ -26,6 +26,7 @@ class CommentCreate extends Component {
             .then(res => {
                 console.log(res)
                 console.log(res.data)
+                // this.props.history.push("/comments")
             })
         console.log("CreateComment Fired")
     }
