@@ -1,4 +1,8 @@
-.indiv-comment{
-    border: solid blue 5px;
-    margin: 20px 10px
+body {
+  background-color: rgba(218, 218, 218, 1);
+}
+p {
+  font-size: 20px;
+  color: rgba(254, 171, 42, 1);
+  font-size: 30px;
 }

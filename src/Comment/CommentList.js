@@ -7,28 +7,31 @@ class CommentList extends Component {
     super(props);
     this.state = {
       comments: [],
-      projects: '',
+      projects: ""
     };
-    console.log(`http://localhost:3001/comments/${this.props.devPostId}`)
-    console.log(this.state.devPostId)
-
+    console.log(`http://localhost:3001/comments/${this.props.devPostId}`);
+    console.log(this.state.devPostId);
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:3001/comments/${this.props.devPostId}`).then(item => {
-      this.setState({ comments: item.data });
-      console.log(this.state);
-    });
+    axios
+      .get(`http://localhost:3001/comments/${this.props.devPostId}`)
+      .then(item => {
+        this.setState({ comments: item.data });
+        console.log(this.state);
+      });
   }
 
   handleDelete() {
-    axios.delete(`http://localhost:3001/comments/ + ${this.state.comments._id}`).then((item) => {
-      console.log(item.data)
-    })
-    this.props.history('/comments')
+    axios
+      .delete(`http://localhost:3001/comments/ + ${this.state.comments._id}`)
+      .then(item => {
+        console.log(item.data);
+      });
+    this.props.history("/comments");
   }
   render() {
-    console.log(`CommentList devPostId ${this.props.devPostId}`)
+    console.log(`CommentList devPostId ${this.props.devPostId}`);
     const comments = this.state.comments.map(item => {
       return (
         <div className="indiv-comment" key={item._id}>
@@ -37,9 +40,17 @@ class CommentList extends Component {
           <p>Likes: {item.likes}</p>
           <p>Author: {item.user}</p>
           <Link to={`/comments/edit/${item._id}`}>
-            <button>Update</button>
+            <button type="button" class="btn btn-success">
+              Update
+            </button>
           </Link>
-          <button onClick={this.handleDelete}>Delete</button>
+          <button
+            onClick={this.handleDelete}
+            type="button"
+            class="btn btn-success"
+          >
+            Delete
+          </button>
         </div>
       );
     });

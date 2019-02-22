@@ -2,14 +2,14 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 // import ProjectCreate from "../Project/ProjectCreate";
-import CommentCreate from '../Comment/CommentCreate'
-import CommentList from '../Comment/CommentList'
+import CommentCreate from "../Comment/CommentCreate";
+import CommentList from "../Comment/CommentList";
 class ProjectShow extends Component {
   constructor(props) {
     super(props);
     this.state = {
       projects: {},
-      devPostId: ''
+      devPostId: ""
     };
     this.handleDelete = this.handleDelete.bind(this);
   }
@@ -22,7 +22,7 @@ class ProjectShow extends Component {
           projects: res.data,
           devPostId: res.data._id
         });
-        console.log(`devPostId from ProjectShow: ${this.state.devPostId}`)
+        console.log(`devPostId from ProjectShow: ${this.state.devPostId}`);
       })
       .catch(err => {
         console.log(err);
@@ -66,7 +66,10 @@ class ProjectShow extends Component {
             Delete
           </button>
         </Link>
-        <CommentList projects={this.state.projects} devPostId={this.state.devPostId} />
+        <CommentList
+          projects={this.state.projects}
+          devPostId={this.state.devPostId}
+        />
         <CommentCreate devPostId={this.state.devPostId} />
       </div>
     );

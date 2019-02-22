@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import axios from 'axios'
+import axios from "axios";
 
 class ProjectCreate extends Component {
   constructor() {
@@ -64,7 +64,7 @@ class ProjectCreate extends Component {
           value={Thumbnail}
           onChange={this.onChange}
         />
-
+        <br />
         <button type="submit">Submit</button>
       </form>
     );

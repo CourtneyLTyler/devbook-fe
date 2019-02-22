@@ -8,41 +8,60 @@ import JobShow from "./Job/JobShow";
 import JobsList from "./Job/JobsList";
 import JobUpdate from "./Job/JobUpdate";
 import Home from "./Home/Home";
-import ProjectList from './Project/ProjectList'
-import ProjectCreate from './Project/ProjectCreate'
-import ProjectUpdate from './Project/ProjectUpdate'
-import ProjectShow from './Project/ProjectShow'
+import ProjectList from "./Project/ProjectList";
+import ProjectCreate from "./Project/ProjectCreate";
+import ProjectUpdate from "./Project/ProjectUpdate";
+import ProjectShow from "./Project/ProjectShow";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <nav>
-          <Link to="/">
-            <h1>DevBook</h1>
-          </Link>
-          <Link to="/jobs">
-            <h1>Job Posts</h1>
-          </Link>
-          <Link to="/user/new">
-            <h1>Create Profile</h1>
-          </Link>
-          <Link to="/user/:id">
-            <h1>My Profile</h1>
-          </Link>
+        <Link to="/">
+          <h1 class="nav-link active">DevBook</h1>
+        </Link>
+        <span />
+        <br />
+        <nav class="nav nav-pills nav-fill nav justify-content-center van">
           <Link to="/jobs/new">
-            <h1>Create A Job post</h1>
+            <a class="nav-link active">Create Job Post</a>
           </Link>
-          <Link to="/projects">
-          <h1>Project Posts</h1>
+          <br />
+          <span />
+
+          <Link to="/jobs">
+            <a class="nav-link active">Posted Job</a>
           </Link>
+          <br />
+
+          <Link to="/user/new">
+            <a class="nav-link active">Create User Profile</a>
+          </Link>
+          <br />
+
+          <Link to="/user/:id">
+            <a class="nav-link active">User Profile</a>
+          </Link>
+          <br />
+
           <Link to="/projects/new">
-          <h1>Create Project</h1>
+            <a class="nav-link active">Create Project Posts</a>
           </Link>
+          <br />
+
+          <Link to="/projects">
+            <a class="nav-link active">Show Projects</a>
+          </Link>
+          <br />
         </nav>
 
         <main>
-          <Route exact path='/user/:id' exact render={(routerProps) => <UserProfile {...routerProps} />} />
+          <Route
+            exact
+            path="/user/:id"
+            exact
+            render={routerProps => <UserProfile {...routerProps} />}
+          />
 
           <Route
             exact
@@ -74,7 +93,9 @@ class App extends Component {
             render={routerProps => <ProjectShow {...routerProps} />}
           />
 
-          <Route exact path="/user/new"
+          <Route
+            exact
+            path="/user/new"
             render={routerProps => <UserForm {...routerProps} />}
           />
           <Switch>
@@ -102,7 +123,6 @@ class App extends Component {
               render={routerProps => <JobShow {...routerProps} />}
             />
           </Switch>
-
         </main>
       </div>
     );

@@ -17,7 +17,7 @@ class UserProfile extends Component {
         this.setState({
           profile: res.data
         });
-        console.log(res.data)
+        console.log(res.data);
       })
       .catch(err => {
         console.log(err);
@@ -28,8 +28,8 @@ class UserProfile extends Component {
     return (
       <div>
         <h1>
-          Hey {this.state.profile.firstName} {this.state.profile.lastName} Check
-          Out Your Profile
+          Hello {this.state.profile.firstName} {this.state.profile.lastName}{" "}
+          Profile
         </h1>
         <img
           src={this.state.profile.profilePic}

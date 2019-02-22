@@ -1,4 +1,6 @@
-.indiv-job{
-    border: solid black 5px;
-    margin: 20px 10px
+body {
+  font-size: 20px;
+}
+p {
+  color: rgb(254, 173, 42);
 }

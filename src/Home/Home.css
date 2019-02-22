@@ -1,0 +1,9 @@
+body {
+  background-image: url(../img/annie-spratt-475541-unsplash.jpg);
+  opacity: 120% black;
+  /* filter: alpha(opacity=50); */
+}
+h1 {
+  font-size: 50px;
+  color: rgba(254, 171, 42, 1);
+}

@@ -31,3 +31,13 @@
     transform: rotate(360deg);
   }
 }
+body {
+  background-color: rgba(233, 255, 247, 1);
+  font-size: 20px;
+}
+h1 {
+  color: rgba(97, 116, 180, 1);
+}
+.van {
+  margin: 10px;
+}
