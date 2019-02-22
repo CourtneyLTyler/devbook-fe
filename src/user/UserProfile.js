@@ -41,6 +41,16 @@ class UserProfile extends Component {
         <h1> {this.state.profile.employer}</h1>
         <h1> {this.state.profile.specialty}</h1>
         <h1> {this.state.profile.projects}</h1>
+
+        <button value="update" type="update">
+          {" "}
+          Update{" "}
+        </button>
+
+        <button value="delete" type="submit" onClick={this.handleDelete}>
+          {" "}
+          Delete{" "}
+        </button>
       </div>
     );
   }

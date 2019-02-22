@@ -64,6 +64,7 @@ class JobShow extends Component {
             Delete
           </button>
         </Link>
+
         <CommentList />
       </div>
     );

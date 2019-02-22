@@ -33,6 +33,8 @@ class ProjectList extends Component {
             <p>{cv.title}</p>
             <p>{cv.description}</p>
             <p>{cv.Thumbnail}</p>
+
+            <p>Comments: {this.state.projects.length}</p>
             <PorjectsCreate />
           </div>
         );
