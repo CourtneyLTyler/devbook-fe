@@ -35,6 +35,7 @@ class UserForm extends Component {
       .then(res => {
         console.log(res);
         console.log(res.data);
+        this.props.history.push("/user/" + res.data._id);
       });
     console.log("Onsubmit Fired");
   }

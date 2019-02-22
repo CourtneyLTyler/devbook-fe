@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from 'axios'
 
 class ProjectUpdate extends Component {
   constructor(props) {
@@ -24,10 +25,6 @@ class ProjectUpdate extends Component {
         console.log(err);
       });
   }
-
-  // onChange = (e) => {
-  //     this.setState({ [e.target.name]: e.target.value });
-  //   }
 
   onChange = e => {
     const state = this.state.projects;
@@ -57,7 +54,7 @@ class ProjectUpdate extends Component {
       .then(res => {
         console.log(res);
         // the route to the projects show
-        this.props.history.push("//" + this.props.match.params.id);
+        this.props.history.push("/projects/" + this.props.match.params.id);
       });
     // .catch((err) => {
     //     console.log(err)
@@ -111,9 +108,4 @@ class ProjectUpdate extends Component {
 
 export default ProjectUpdate;
 
-// Projects:
-//     • linkToRepo: String
-//     • title: String
-//     • description: String
-//     • Thumbnail: String
-//         § Optional
+

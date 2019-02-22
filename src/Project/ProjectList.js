@@ -25,12 +25,9 @@ class ProjectList extends Component {
         return (
           <div key={cv._id}>
             <Link to={"/projects/" + cv._id}>
-              <p>{cv.position}</p>
+              <p>{cv.title}</p>
             </Link>
-            <p>{cv.company}</p>
-            <img src="{cv.logoURL}" alt="company logo" />
             <p>{cv.linkToRepo}</p>
-            <p>{cv.title}</p>
             <p>{cv.description}</p>
             <p>{cv.Thumbnail}</p>
 

@@ -37,7 +37,10 @@ class JobShow extends Component {
         this.setState({
           job: {}
         });
-        window.location.reload();
+        this.props.history.push("/jobs");
+      })
+      .catch(err => {
+        console.log(err);
       })
       .catch(err => {
         console.log(err);
@@ -46,7 +49,7 @@ class JobShow extends Component {
 
   render() {
     return (
-      <div key={this.state.job.position} className="indiv-job">
+      <div key={this.state.job._id} className="indiv-job">
         <h1>Position: {this.state.job.position}</h1>
         <h2>Company: {this.state.job.company}</h2>
         <p>{this.state.job.logoURL}</p>
@@ -59,11 +62,10 @@ class JobShow extends Component {
             Update
           </button>
         </Link>
-        <Link to="/jobs">
-          <button value="delete" type="submit" onClick={this.handleDelete}>
-            Delete
-          </button>
-        </Link>
+
+        <button value="delete" type="submit" onClick={this.handleDelete}>
+          Delete
+        </button>
 
         <CommentList />
       </div>
