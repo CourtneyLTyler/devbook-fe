@@ -45,7 +45,7 @@ class JobShow extends Component {
 
   render() {
     return (
-      <div key={this.state.job.position} className='indiv-job'>
+      <div key={this.state.job._id} className='indiv-job'>
         <h1>Position: {this.state.job.position}</h1>
         <h2>Company: {this.state.job.company}</h2>
         <p>{this.state.job.logoURL}</p>

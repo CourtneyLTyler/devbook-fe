@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import ProjectCreate from "../Project/ProjectCreate";
-
+import CommentCreate from '../Comment/CommentCreate'
+import CommentList from '../Comment/CommentList'
 class ProjectShow extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      projects: {}
+      projects: {},
+      id: ''
     };
     this.handleDelete = this.handleDelete.bind(this);
   }
@@ -17,7 +19,8 @@ class ProjectShow extends Component {
       .get("http://localhost:3001/projects/" + this.props.match.params.id)
       .then(res => {
         this.setState({
-          projects: res.data
+          projects: res.data,
+          id: res.data._id
         });
       })
       .catch(err => {
@@ -60,7 +63,8 @@ class ProjectShow extends Component {
             Delete
           </button>
         </Link>
-        <ProjectCreate />
+        <CommentList />
+        <CommentCreate id={this.state.id} />
       </div>
     );
   }
