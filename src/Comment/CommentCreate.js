@@ -30,7 +30,7 @@ class CommentCreate extends Component {
         console.log("CreateComment Fired")
     }
     render() {
-        console.log(this.props.devPostId)
+        console.log(`devPostId: ${this.props.devPostId}`)
         return (
             <div className='indiv-comment'>
                 <h1>Hello from CommentCreate Component</h1>

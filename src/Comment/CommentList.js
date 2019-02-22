@@ -7,14 +7,17 @@ class CommentList extends Component {
     super(props);
     this.state = {
       comments: [],
-      project: ''
+      projects: '',
     };
+    console.log(`http://localhost:3001/comments/${this.props.devPostId}`)
+    console.log(this.state.devPostId)
+
   }
 
   componentDidMount() {
-    axios.get("http://localhost:3001/comments").then(item => {
+    axios.get(`http://localhost:3001/comments/${this.props.devPostId}`).then(item => {
       this.setState({ comments: item.data });
-      // console.log(this.state.comments);
+      console.log(this.state);
     });
   }
 
@@ -25,7 +28,7 @@ class CommentList extends Component {
     this.props.history('/comments')
   }
   render() {
-    console.log(this.props.projects._id)
+    console.log(`CommentList devPostId ${this.props.devPostId}`)
     const comments = this.state.comments.map(item => {
       return (
         <div className="indiv-comment" key={item._id}>

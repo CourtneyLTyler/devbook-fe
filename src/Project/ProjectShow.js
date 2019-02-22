@@ -22,7 +22,7 @@ class ProjectShow extends Component {
           projects: res.data,
           devPostId: res.data._id
         });
-        // console.log(res.data)
+        console.log(`devPostId from ProjectShow: ${this.state.devPostId}`)
       })
       .catch(err => {
         console.log(err);
@@ -81,7 +81,7 @@ class ProjectShow extends Component {
             Delete
           </button>
         </Link>
-        <CommentList projects={this.state.projects} />
+        <CommentList projects={this.state.projects} devPostId={this.state.devPostId} />
         <CommentCreate devPostId={this.state.devPostId} />
       </div>
     );
