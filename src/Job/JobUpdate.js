@@ -27,10 +27,6 @@ class JobUpdate extends Component {
             })
     }
 
-    // onChange = (e) => {
-    //     this.setState({ [e.target.name]: e.target.value });
-    //   }
-
     onChange = (e) => {
         const state = this.state.job
         state[e.target.name] = e.target.value;
@@ -39,6 +35,7 @@ class JobUpdate extends Component {
 
     // not sure why the .catch won't work
     onSubmit = (e) => {
+        console.log("update submitting")
         e.preventDefault();
         const { position, company, logoURL, content, location } = this.state.job
         // should I have this as axios.post??
@@ -48,9 +45,6 @@ class JobUpdate extends Component {
                 // the route to the job show
                 this.props.history.push('/jobs/' + this.props.match.params.id)
             });
-        // .catch((err) => {
-        //     console.log(err)
-        // })
     }
 
     render() {

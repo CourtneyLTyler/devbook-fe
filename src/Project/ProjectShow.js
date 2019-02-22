@@ -29,21 +29,6 @@ class ProjectShow extends Component {
       });
   }
 
-  //   handleDelete(){
-  //     console.log("deleting" + this.props.match.params.id);
-  //     axios.delete('http://localhost:3001/projects/'+ this.props.match.params.id)
-  //       .then((res) => {
-  //         console.log(res.data)
-  //         this.context.history.push("/projects")
-  //         this.setState({
-  //             projects: {}
-  //         })
-  //       });
-  //     //   .catch((err)=> {
-  //     //     console.log(err)
-  //     //   })
-  //   }
-
   handleDelete = e => {
     e.preventDefault();
 
@@ -88,10 +73,3 @@ class ProjectShow extends Component {
   }
 }
 export default ProjectShow;
-
-// Projects:
-//     • linkToRepo: String
-//     • title: String
-//     • description: String
-//     • Thumbnail: String
-//         § Optional

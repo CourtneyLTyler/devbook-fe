@@ -42,15 +42,8 @@ class App extends Component {
         </nav>
 
         <main>
-          {/* <Route path='/user/:id' exact render={(routerProps) => <UserProfile {...routerProps} {...this.state} />} /> */}
+          <Route exact path='/user/:id' exact render={(routerProps) => <UserProfile {...routerProps} />} />
 
-          <Route
-            path="/user/:id"
-            exact
-            render={routerProps => (
-              <UserProfile {...routerProps} {...this.state} />
-            )}
-          />
           <Route
             exact
             path="/"
@@ -81,9 +74,7 @@ class App extends Component {
             render={routerProps => <ProjectShow {...routerProps} />}
           />
 
-          <Route
-            exact
-            path="/user/new"
+          <Route exact path="/user/new"
             render={routerProps => <UserForm {...routerProps} />}
           />
           <Switch>
@@ -111,6 +102,7 @@ class App extends Component {
               render={routerProps => <JobShow {...routerProps} />}
             />
           </Switch>
+
         </main>
       </div>
     );

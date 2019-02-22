@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import axios from "axios";
+
 class UserProfile extends Component {
-  constructor(props) {
-    super(props);
+  constructor() {
+    super();
     this.state = {
       profile: {}
     };
@@ -13,15 +14,16 @@ class UserProfile extends Component {
       .get("http://localhost:3001/user/" + this.props.match.params.id)
       .then(res => {
         console.log(res);
-        // What should i put here
         this.setState({
           profile: res.data
         });
+        console.log(res.data)
       })
       .catch(err => {
         console.log(err);
       });
   }
+
   render() {
     return (
       <div>

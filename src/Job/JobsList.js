@@ -31,7 +31,6 @@ class JobsList extends Component {
             <img src="{cv.logoURL}" alt="company logo" />
             <p>{cv.content}</p>
             <p>{cv.location}</p>
-            < CommentCreate />
           </div>
         )
       })
