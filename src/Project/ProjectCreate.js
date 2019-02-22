@@ -23,7 +23,7 @@ class ProjectCreate extends Component {
     e.preventDefault();
     console.log("form has been submitted");
 
-    axios.post("http://localhost:3001/projects", this.state).then(result => {
+    axios.post("https://devbook-backend.herokuapp.com/projects", this.state).then(result => {
       console.log(result);
       this.props.history.push("/projects");
     });

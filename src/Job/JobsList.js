@@ -13,13 +13,14 @@ class JobsList extends Component {
     };
   }
 
-  componentDidMount() {
-    axios.get('http://localhost:3001/jobs')
-      .then(res => {
-        this.setState({ jobs: res.data });
-        console.log(this.state.jobs);
-      });
-  }
+      componentDidMount() {
+        // axios.get('http://localhost:3001/jobs')
+        axios.get('https://devbook-backend.herokuapp.com/jobs')
+          .then(res => {
+            this.setState({ jobs: res.data });
+            console.log(this.state.jobs);
+          });
+      }
 
   render() {
     if (this.state.jobs) {

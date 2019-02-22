@@ -12,9 +12,9 @@ class ProjectUpdate extends Component {
   }
 
   componentDidMount() {
-    console.log("http://localhost:3001/projects/" + this.props.match.params.id);
+    console.log("https://devbook-backend.herokuapp.com/projects/" + this.props.match.params.id);
     axios
-      .get("http://localhost:3001/projects/" + this.props.match.params.id)
+      .get("https://devbook-backend.herokuapp.com/projects/" + this.props.match.params.id)
       .then(res => {
         this.setState({
           projects: res.data
@@ -44,7 +44,7 @@ class ProjectUpdate extends Component {
     } = this.state.projects;
     // should I have this as axios.post??
     axios
-      .put("http://localhost:3001/projects/" + this.props.match.params.id, {
+      .put("https://devbook-backend.herokuapp.com/projects/" + this.props.match.params.id, {
         position,
         company,
         logoURL,

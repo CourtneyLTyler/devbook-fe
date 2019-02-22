@@ -16,9 +16,8 @@ class JobShow extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get("http://localhost:3001/jobs/" + this.props.match.params.id)
-      .then(res => {
+    axios.get('https://devbook-backend.herokuapp.com/jobs/' + this.props.match.params.id)
+      .then((res) => {
         this.setState({
           job: res.data,
           devPostId: res.data._id
@@ -32,10 +31,9 @@ class JobShow extends Component {
   handleDelete = e => {
     e.preventDefault();
 
-    axios
-      .delete(`http://localhost:3001/jobs/${this.state.job._id}`)
-      .then(res => {
-        console.log(res.data);
+    axios.delete(`https://devbook-backend.herokuapp.com/jobs/${this.state.job._id}`)
+      .then((res) => {
+        console.log(res.data)
         this.setState({
           job: {}
         });

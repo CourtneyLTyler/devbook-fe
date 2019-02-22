@@ -12,18 +12,17 @@ class CommentUpdate extends Component {
     this.handleChange = this.handleChange.bind(this);
   }
 
-  componentDidMount() {
-    axios
-      .get("http://localhost:3001/comments" + this.props.match.params.id)
-      .then(res => {
-        this.setState({
-          content: res.data
-        });
-      })
-      .catch(err => {
-        console.log(err);
-      });
-  }
+    componentDidMount() {
+        axios.get('https://devbook-backend.herokuapp.com/comments' + this.props.match.params.id)
+            .then(res => {
+                this.setState({
+                    content: res.data
+                })
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
 
   handleChange(evt) {
     this.setState({ [evt.target.name]: evt.target.value }, () => {

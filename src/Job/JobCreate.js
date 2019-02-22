@@ -26,7 +26,7 @@ class JobCreate extends Component {
     // get our form data out of state
     // const { position, company, logoURL, content, location } = this.state;
 
-    axios.post("http://localhost:3001/jobs", this.state).then(result => {
+    axios.post("https://devbook-backend.herokuapp.com/jobs", this.state).then(result => {
       console.log(result);
       // whatever the route to the jobs list is
       this.props.history.push("/jobs");

@@ -14,8 +14,8 @@ class JobUpdate extends Component {
     }
 
     componentDidMount() {
-        console.log('http://localhost:3001/jobs/' + this.props.match.params.id)
-        axios.get('http://localhost:3001/jobs/' + this.props.match.params.id)
+        console.log('https://devbook-backend.herokuapp.com/jobs/' + this.props.match.params.id)
+        axios.get('https://devbook-backend.herokuapp.com/jobs/' + this.props.match.params.id)
             .then(res => {
                 this.setState({
                     job: res.data
@@ -39,7 +39,7 @@ class JobUpdate extends Component {
         e.preventDefault();
         const { position, company, logoURL, content, location } = this.state.job
         // should I have this as axios.post??
-        axios.put('http://localhost:3001/jobs/' + this.props.match.params.id, { position, company, logoURL, content, location })
+        axios.put('https://devbook-backend.herokuapp.com/jobs/' + this.props.match.params.id, { position, company, logoURL, content, location })
             .then((res) => {
                 console.log(res)
                 // the route to the job show

@@ -31,7 +31,7 @@ class UserForm extends Component {
     console.log("the button is working");
     axios
       // .post("https://devbook-backend.herokuapp.com", this.state)
-      .post("http://localhost:3001/user", this.state)
+      .post("https://devbook-backend.herokuapp.com/user", this.state)
       .then(res => {
         console.log(res);
         console.log(res.data);

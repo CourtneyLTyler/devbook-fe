@@ -16,7 +16,7 @@ class ProjectShow extends Component {
 
   componentDidMount() {
     axios
-      .get("http://localhost:3001/projects/" + this.props.match.params.id)
+      .get("https://devbook-backend.herokuapp.com/projects/" + this.props.match.params.id)
       .then(res => {
         this.setState({
           projects: res.data,
@@ -33,7 +33,7 @@ class ProjectShow extends Component {
     e.preventDefault();
 
     axios
-      .delete(`http://localhost:3001/projects/${this.state.projects._id}`)
+      .delete(`https://devbook-backend.herokuapp.com/projects/${this.state.projects._id}`)
       .then(res => {
         console.log(res.data);
         this.setState({
