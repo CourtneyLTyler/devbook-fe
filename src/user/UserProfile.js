@@ -8,7 +8,7 @@ class UserProfile extends Component {
       profile: {}
     };
   }
-
+ 
   componentDidMount() {
     axios
       .get("https://devbook-backend.herokuapp.com/user/" + this.props.match.params.id)
@@ -25,6 +25,7 @@ class UserProfile extends Component {
   }
 
   render() {
+    console.log(this.state.profile.firstName )
     return (
       <div>
         <h1>
