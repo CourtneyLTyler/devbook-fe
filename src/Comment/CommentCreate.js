@@ -3,17 +3,18 @@ import axios from 'axios';
 import './Comments.css'
 
 class CommentCreate extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            content: ''
+            content: '',
+            devPostId: ''
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
     }
 
     handleChange(evt) {
-        this.setState({ [evt.target.name]: evt.target.value },
+        this.setState({ [evt.target.name]: evt.target.value, devPostId: this.props.devPostId },
             () => {
                 console.log(this.state)
             })
@@ -29,6 +30,7 @@ class CommentCreate extends Component {
         console.log("CreateComment Fired")
     }
     render() {
+        console.log(`devPostId: ${this.props.devPostId}`)
         return (
             <div className='indiv-comment'>
                 <h1>Hello from CommentCreate Component</h1>
@@ -37,6 +39,9 @@ class CommentCreate extends Component {
                     <br />
                     <textarea type='text' name='content' value={this.state.value} onChange={this.handleChange} />
                     <br />
+                    <label>devPostId:</label>
+                    <br />
+                    <input type='text' name='devPostId' value={this.props.devPostId} readOnly />
                     <input type='submit' value='Submit' />
                 </form>
             </div>
