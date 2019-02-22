@@ -36,7 +36,7 @@ class JobShow extends Component {
         this.setState({
           job: {}
         })
-        window.location.reload()
+        this.props.history.push("/jobs");
       })
       .catch((err) => {
         console.log(err)
@@ -55,9 +55,9 @@ class JobShow extends Component {
         <Link to={`/jobs/edit/${this.state.job._id}`}>
           <button value="update" type="update">Update</button>
         </Link>
-        <Link to='/jobs'>
+
           <button value="delete" type="submit" onClick={this.handleDelete}>Delete</button>
-        </Link>
+
         <CommentList />
         <CommentCreate />
       </div>
