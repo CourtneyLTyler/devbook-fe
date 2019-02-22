@@ -7,6 +7,7 @@ class CommentList extends Component {
     super(props);
     this.state = {
       comments: [],
+<<<<<<< HEAD
       projects: ""
     };
     console.log(`http://localhost:3001/comments/${this.props.devPostId}`);
@@ -29,6 +30,28 @@ class CommentList extends Component {
         console.log(item.data);
       });
     this.props.history("/comments");
+=======
+      projects: '',
+      // devPostId: ''
+    };
+    // console.log(`http://localhost:3001/comments/${this.props.devPostId}`)
+    console.log(this.props.devPostId)
+
+  }
+
+  componentDidMount() {
+    axios.get(`http://localhost:3001/comments/${this.props.devPostId}`).then(item => {
+      this.setState({ comments: item.data });
+      // console.log(this.state);
+    });
+  }
+
+  handleDelete() {
+    axios.delete(`http://localhost:3001/comments/ + ${this.state.comments._id}`).then((item) => {
+      // console.log(item.data)
+    })
+    this.props.history('/comments')
+>>>>>>> testingCRUD
   }
   render() {
     console.log(`CommentList devPostId ${this.props.devPostId}`);
