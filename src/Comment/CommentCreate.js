@@ -22,7 +22,7 @@ class CommentCreate extends Component {
 
     handleSubmit(evt) {
         evt.preventDefault()
-        axios.post('http://localhost:3001/comments', this.state)
+        axios.post('https://devbook-backend.herokuapp.com/comments', this.state)
             .then(res => {
                 console.log(res)
                 console.log(res.data)

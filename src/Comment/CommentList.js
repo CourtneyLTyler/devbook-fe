@@ -9,20 +9,20 @@ class CommentList extends Component {
       comments: [],
       projects: '',
     };
-    console.log(`http://localhost:3001/comments/${this.props.devPostId}`)
+    console.log(`https://devbook-backend.herokuapp.com/comments/${this.props.devPostId}`)
     console.log(this.state.devPostId)
 
   }
 
   componentDidMount() {
-    axios.get(`http://localhost:3001/comments/${this.props.devPostId}`).then(item => {
+    axios.get(`https://devbook-backend.herokuapp.com/comments/${this.props.devPostId}`).then(item => {
       this.setState({ comments: item.data });
       console.log(this.state);
     });
   }
 
   handleDelete() {
-    axios.delete(`http://localhost:3001/comments/ + ${this.state.comments._id}`).then((item) => {
+    axios.delete(`https://devbook-backend.herokuapp.com/comments/ + ${this.state.comments._id}`).then((item) => {
       console.log(item.data)
     })
     this.props.history('/comments')

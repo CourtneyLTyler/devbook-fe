@@ -13,7 +13,7 @@ class ProjectList extends Component {
   }
 
   componentDidMount() {
-    axios.get("http://localhost:3001/projects").then(res => {
+    axios.get("https://devbook-backend.herokuapp.com/projects").then(res => {
       this.setState({ projects: res.data });
       console.log(this.state.projects);
     });

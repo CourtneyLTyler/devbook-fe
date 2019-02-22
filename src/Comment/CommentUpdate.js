@@ -13,7 +13,7 @@ class CommentUpdate extends Component {
     }
 
     componentDidMount() {
-        axios.get('http://localhost:3001/comments' + this.props.match.params.id)
+        axios.get('https://devbook-backend.herokuapp.com/comments' + this.props.match.params.id)
             .then(res => {
                 this.setState({
                     content: res.data
