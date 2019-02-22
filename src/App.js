@@ -8,8 +8,36 @@ import JobShow from "./Job/JobShow";
 import JobsList from "./Job/JobsList";
 import JobUpdate from "./Job/JobUpdate";
 import Home from "./Home/Home";
+import SignUpForm from "../Signup/Signup";
+import LogInForm from "../Login/Login";
 
 class App extends Component {
+  constructor() {
+    super();
+
+    this.state = {
+      email: "",
+      password: "",
+      isLoggedIn: false
+    };
+
+    this.handleLogOut = this.handleLogOut.bind(this);
+    this.handleInput = this.handleInput.bind(this);
+    this.handleLogIn = this.handleLogIn.bind(this);
+    this.handleSignUp = this.handleSignUp.bind(this);
+  }
+
+  componentDidMount() {
+    if (localStorage.token) {
+      this.setState({
+        isLoggedIn: true
+      });
+    } else {
+      this.setState({
+        isLoggedIn: false
+      });
+    }
+  }
   render() {
     return (
       <div className="App">
@@ -74,12 +102,31 @@ class App extends Component {
               path="/jobs/:id"
               render={routerProps => <JobShow {...routerProps} />}
             />
+            <Route
+              path="/login"
+              render={props => {
+                return (
+                  <Login
+                    isLoggedIn={this.state.isLoggedIn}
+                    handleInput={this.handleInput}
+                    handleLogIn={this.handleLogin}
+                  />
+                );
+              }}
+            />
+            <Route
+              path="/signup"
+              render={props => {
+                return (
+                  <Signup
+                    isLoggedIn={this.state.isLoggedIn}
+                    handleInput={this.handleInput}
+                    handleSignUp={this.handleSignup}
+                  />
+                );
+              }}
+            />
           </Switch>
-          {/* <Route
-              exact
-              path="/Login"
-              render={routerProps => <Login {...routerProps} />}
-            /> */}
         </main>
       </div>
     );
