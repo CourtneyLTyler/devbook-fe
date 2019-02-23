@@ -5,7 +5,10 @@ DevBook is a full-stack application utilizing the MERN stack (Mongoose, Express,
 
 
 ## Brief Example
-code snippet or screenshot of project running in browser
+Below is a snippet of our code which allows users to create a profile:
+
+
+![snippet of models code](src/img/CodeSnipDevBook1.png?raw=true)
 
 
 ## Features Planned and Current Status
@@ -61,16 +64,15 @@ code snippet or screenshot of project running in browser
   * Clone the repository
   * Click on `Clone or Download`, 
   * Use your CLI to change into the directory where you would like this to be located
-  * Run $ git clone <clone link provided by GitHub>
-  * Install dependencies
+  * Run `$ git clone` followed by the clone link provided by GitHub
   * change into this directory
-  * run $ npm install
+  * Install dependencies by running `$ npm install`
 * Repeat the above steps with the [back-end repo](https://github.com/rc1336/devbook-backend)
 
 
 ## Contribution Guidelines
 Here are some links for those who would like to contribute to our code, identify bugs, and/or propose improvements:
- [Front-end repo](https://github.com/CourtneyLTyler/devbook-fe) 
-[Front-end issue tracker](https://github.com/CourtneyLTyler/devbook-fe/issues)
-[Back-end repo](https://github.com/rc1336/devbook-backend)
-[Back-end issue tracker](https://github.com/rc1336/devbook-backend/issues)
+* [Front-end repo](https://github.com/CourtneyLTyler/devbook-fe)
+* [Front-end issue tracker](https://github.com/CourtneyLTyler/devbook-fe/issues)
+* [Back-end repo](https://github.com/rc1336/devbook-backend)
+* [Back-end issue tracker](https://github.com/rc1336/devbook-backend/issues)
