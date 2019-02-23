@@ -1,68 +1,76 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+DevBook is a full-stack application utilizing the MERN stack (Mongoose, Express, React, Node).  It is a social networking site for developers that combines features from Facebook, LinkedIn, and Github to bring web developers/software engineers together to network, showcase, and learn.  
 
-### `npm start`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Brief Example
+code snippet or screenshot of project running in browser
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
 
-### `npm test`
+## Features Planned and Current Status
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Bronze (MVP)
+  * Achieve CRUD functionality in at least one model
+    * Status: Acheived
+  * Deploy (Heroku/Surge)
+    * Status: Acheived
+  * Styling applied throughout
+    * Status: Acheived
 
-### `npm run build`
+### Silver
+  * Incorporate User, Comment, Job, Project, and Discussion Models with full CRUD
+    * Status: Partially Acheived
+      * User - CR, Comment - CR, Job - CRUD, Project - CRD, Discussion - None
+  * Responsive design - displays on all screen sizes
+    * Status: To Acheive in future
+      * Unable to attempt - time constraint
+  * Authentication - users sign in/out, restrict features for authenticated users, render the current user's profile
+    * Status: Partially Acheived
+      * Code partially written, unable to complete due to time constraint
+      
+### Gold
+  * Incorporate an API
+    * Status: To Acheive in future
+      * Unable to attempt - time constraint
+  * Professional styling, UX/UI design principals incorporated
+    * Status: To Acheive in future
+      * Unable to attempt - time constraint
+      * Will require additional resources
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+## List of Technologies Used
+* Mongoose
+* Express
+* React
+* Node
+* HTML
+* CSS
+* JavaScript
+* Bootstrap
+* GitHub
+* Heroku
+* Surge
+* Postman
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Installation Instructions / Getting Started
+* Front-end instructions:
+  * Navigate to the [front-end repo](https://github.com/CourtneyLTyler/devbook-fe) 
+  * Fork the repository
+  * Clone the repository
+  * Click on `Clone or Download`, 
+  * Use your CLI to change into the directory where you would like this to be located
+  * Run $ git clone <clone link provided by GitHub>
+  * Install dependencies
+  * change into this directory
+  * run $ npm install
+* Repeat the above steps with the [back-end repo](https://github.com/rc1336/devbook-backend)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+## Contribution Guidelines
+Here are some links for those who would like to contribute to our code, identify bugs, and/or propose improvements:
+ [Front-end repo](https://github.com/CourtneyLTyler/devbook-fe) 
+[Front-end issue tracker](https://github.com/CourtneyLTyler/devbook-fe/issues)
+[Back-end repo](https://github.com/rc1336/devbook-backend)
+[Back-end issue tracker](https://github.com/rc1336/devbook-backend/issues)
