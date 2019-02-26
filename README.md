@@ -72,6 +72,7 @@ Below is a snippet of our code which allows users to create a profile:
 
 ## Contribution Guidelines
 Here are some links for those who would like to contribute to our code, identify bugs, and/or propose improvements:
+* [Deployed App](http://dev-book.surge.sh/)
 * [Front-end repo](https://github.com/CourtneyLTyler/devbook-fe)
 * [Front-end issue tracker](https://github.com/CourtneyLTyler/devbook-fe/issues)
 * [Back-end repo](https://github.com/rc1336/devbook-backend)
